@@ -869,6 +869,12 @@ ul.no-bullets {
   }
 }
 
+@media (max-width: 320px) {
+  h2 {
+    font-size: 40px;
+  }
+}
+
 @media (max-width: 767px) {
  .scroll-down {
       width: 100%;
