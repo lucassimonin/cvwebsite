@@ -55,38 +55,34 @@ class CoreHelper
     /**
      * Get article
      * @param string $category
-     * @param int    $limit
+     * @param int    $locationId
+     * @param sting  $contentTypeIdentifier
      * @return array
      */
-    public function getLatestArticles($category, $limit = 1, $offset = 0)
+    public function getObjectByType($category, $locationId, $contentTypeIdentifier)
     {
-        $articleContentTypeIdentifier = $this->container->getParameter('app.article.content_type.identifier');
-        $blogLocationId = $this->container->getParameter('app.blog.locationid');
-
-        $fieldsData = ['attribute' => 'category', 'operator' => Operator::EQ, 'value' => $category];
+        $fieldsData = ['attribute' => 'type', 'operator' => Operator::EQ, 'value' => $category];
 
         // Initialize latestNews
-        $latestArticles = [];
+        $latestObjects = [];
 
         // Try loading all article under loaded location (listing news)
         try {
             // Generate criteria to get all article under authors listing news class
-            $criteriaLatestArticles = $this->criteriaHelper->generateContentCriterionByParentLocationIdAndContentIdentifiersAndFieldsData($blogLocationId, [$articleContentTypeIdentifier], [$fieldsData]);
+            $criteriaLatestObjects = $this->criteriaHelper->generateContentCriterionByParentLocationIdAndContentIdentifiersAndFieldsData($locationId, [$contentTypeIdentifier], [$fieldsData]);
 
             // Building Query
-            $queryLatestArticles = new Query();
-            $queryLatestArticles->filter = $criteriaLatestArticles;
-            $queryLatestArticles->limit = $limit;
-            $queryLatestArticles->offset = $offset;
-            $queryLatestArticles->sortClauses = array(
+            $queryLatestObjects = new Query();
+            $queryLatestObjects->filter = $criteriaLatestObjects;
+            $queryLatestObjects->sortClauses = array(
                 //new Location\Priority(Query::SORT_ASC),
                 new SortClause\DatePublished(Query::SORT_DESC)
             );
 
             // Getting results
-            $searchResultLatestArticles = $this->repository->sudo(
-                function() use ($queryLatestArticles) {
-                    return $this->searchService->findContent($queryLatestArticles);
+            $searchResultLatestObjects = $this->repository->sudo(
+                function() use ($queryLatestObjects) {
+                    return $this->searchService->findContent($queryLatestObjects);
                 }
             );
 
@@ -101,17 +97,14 @@ class CoreHelper
         }
         //var_dump($searchResultLatestNews);die;
         // Building latest News tab
-        if (isset($searchResultLatestArticles->searchHits)) {
-            foreach ($searchResultLatestArticles->searchHits as $hit) {
-                array_push($latestArticles, $hit->valueObject);
+        if (isset($searchResultLatestObjects->searchHits)) {
+            foreach ($searchResultLatestObjects->searchHits as $hit) {
+                array_push($latestObjects, $hit->valueObject);
             }
         }
-        if ($limit == 1 && count($latestArticles) > 0) {
-            $latestArticles = $latestArticles[0];
-        }
 
 
-        return $latestArticles;
+        return $latestObjects;
     }
 
     /**

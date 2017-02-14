@@ -1,48 +1,23 @@
-<nav id="mainNav" class="navbar navbar-default">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header padding-navbar">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand page-scroll" href="#page-top">{{ 'app.global.title'|trans|raw }}</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-navbar-collapse">
-            <ul class="nav navbar-nav navbar-left">
-                <li>
-                    <a class="page-scroll" href="#presentation">{{ 'app.title.presentation'|trans }}</a>
-                </li>
-                {% if works|length > 0 %}
-                    <li>
-                        <a class="page-scroll" href="#works">{{ 'app.title.works'|trans }}</a>
-                    </li>
-                {% endif %}
-                <li>
-                    <a class="page-scroll" href="#contact">{{ 'app.title.contact'|trans }}</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                {% if not ez_is_field_empty(content, 'linkedin_url') %}
-                    <li>
-                        <a class="btn btn-social-icon btn-linkedin" href="{{ ez_field_value(content, 'linkedin_url') }}" target="_blank"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                {% endif %}
-                {% if not ez_is_field_empty(content, 'twitter_url') %}
-                    <li>
-                        <a class="btn btn-social-icon btn-twitter" href="{{ ez_field_value(content, 'twitter_url') }}" target="_blank"><i class="fa fa-twitter"></i></a>
-                    </li>
-                {% endif %}
-                {% if not ez_is_field_empty(content, 'github_url') %}
-                    <li>
-                        <a class="btn btn-social-icon btn-github" href="{{ ez_field_value(content, 'github_url') }}" target="_blank"><i class="fa fa-github-alt"></i></a>
-                    </li>
-                {% endif %}
-                {{ render( controller( 'AppSiteBundle:Common:languages', {'routeRef': ez_route()} ) ) }}
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+<nav class="navbar navbar-default" id="mainNav" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
     </div>
-    <!-- /.container-fluid -->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a class="page-scroll" href="#profile">{{ 'app.title.presentation'|trans }}</a></li>
+            <li class=""><a class="page-scroll" href="#experiences">{{ 'app.title.xp'|trans }}</a></li>
+            <li class=""><a class="page-scroll" href="#abilities">{{ 'app.title.abilities'|trans }}</a></li>
+            <li class=""><a class="page-scroll" href="#projects">{{ 'app.title.project'|trans }}</a></li>
+            <li class=""><a class="page-scroll" href="#contact">{{ 'app.title.contact'|trans }}</a></li>
+            {{ render( controller( 'AppSiteBundle:Common:languages', {'routeRef': ez_route()} ) ) }}
+        </ul>
+    </div><!-- /.navbar-collapse -->
 </nav>

@@ -2,65 +2,88 @@
 {% block content %}
     {% include 'AppSiteBundle::pagelayout/page_header.html.twig' %}
     {% include 'AppSiteBundle::pagelayout/page_navigation.html.twig' %}
-    <section id="presentation" class="container-fluid bg-blue" style="background-image:url('{{ ez_field_value(content, 'image_service').uri }}');">
+    <section id="profile" class="container">
+        <h2>{{ 'app.title.presentation'|trans }}</h2>
+        <p class="lead">{{ 'app.presentation.subtitle'|trans }}</p>
+
+        <hr>
+
         <div class="row">
-            <div class="col-lg-6 col-md-6 col-md-push-6 wow text-center fadeInRight my-picture">
+            <div class="col-md-4">
+                <h3>{{ 'app.title.about'|trans }}</h3>
+                {{ ez_render_field(content, 'text_bio') }}
+            </div>
+            <div class="col-md-4 text-center">
                 {{ ez_render_field(content, 'image_bio') }}
             </div>
-            <div class="col-lg-6 col-md-6 col-md-pull-6 text-center black-color padding-tb wow fadeInLeft">
-                <div class="col-md-10 col-md-offset-2 col-sm-12">
+            <div class="col-md-4">
+                <h3>{{ 'app.title.details'|trans }}</h3>
+                <p>
+                    <strong>{{ 'app.title.name'|trans }}:</strong><br>
+                    Lucas Simonin<br>
+                    <strong>{{ 'app.title.age'|trans }}:</strong><br>
+                    {{ 'app.title.my_age'|trans }}<br>
+                    <strong>{{ 'app.title.location'|trans }}:</strong><br>
+                    <a href="{{ ez_field_value(content, 'city_url') }}" target="_blank">{{ ez_field_value(content, 'city_url').text }}</a></p>
 
-                    {{ ez_render_field(content, 'text_bio') }}
-                </div>
-                <div class="col-md-10 col-md-offset-2 col-sm-12">
-                    <hr>
-                </div>
-                <div class="col-md-10 col-md-offset-2 col-sm-12">
-                    <div class="col-sm-3 col-xs-6 icon-marginb icon-size">
-                        <i class="fa fa-heart fa-red fa-3x"></i>
-                        <br>
-                        {{ 'app.passion'|trans }}
-                    </div>
-                    <div class="col-sm-3 col-xs-6 icon-marginb icon-size">
-                        <i class="fa fa-laptop fa-red fa-3x"></i>
-                        <br>
-                        {{ 'app.web_addict'|trans }}
-                    </div>
-                    <div class="col-sm-3 col-xs-6 icon-size">
-                        <i class="fa fa-globe fa-blue fa-3x"></i>
-                        <br>
-                        {{ 'app.travel'|trans }}
-                    </div>
-                    <div class="col-sm-3 col-xs-6 icon-size">
-                        <i class="fa fa-trophy fa-orange fa-3x"></i>
-                        <br>
-                        {{ 'app.sport'|trans }}
-                    </div>
-                </div>
             </div>
+        </div>			</section>
+    <div class="bg-grey">
+    <section id="experiences" class="container">
+        <h2>{{ 'app.title.xp'|trans }}</h2>
+        <p class="lead">
+            “{{ 'app.quote.xp'|trans }}”<br>- {{ 'app.quote.xp.author'|trans }}
+        </p>
+
+        <hr>
+
+        <h3>{{ 'app.title.education'|trans }}</h3>
+
+
+        <div class="experiences">
+
+
+            {% for education in educations %}
+                {% include 'AppSiteBundle::content/parts/experience.html.twig' with {'item': education} %}
+            {% endfor %}
+
+
+        </div>
+
+
+
+        <hr>
+
+        <h3>{{ 'app.title.career'|trans }}</h3>
+
+
+        <div class="experiences">
+            {% for xp in xps %}
+                {% include 'AppSiteBundle::content/parts/experience.html.twig' with {'item': xp} %}
+            {% endfor %}
         </div>
 
     </section>
-    <section class="container-fluid bg-black text-center stat">
+    </div>
+    <section id="abilities" class="container">
+        <h2>{{ 'app.title.abilities'|trans }}</h2>
+        <p class="lead">
+            “{{ 'app.quote.skill'|trans }}”<br>- {{ 'app.quote.skill.author'|trans }}
+        </p>
+        <hr>
+        <h3>{{ 'app.title.skill'|trans }}</h3>
         <div class="row">
-            <div class="col-sm-4 wow fadeInLeft icon-marginb">
-                <i class="fa fa-calendar blue" aria-hidden="true"></i><br>
-                <p><span class="timer" data-from="0" data-to="3"></span> {{ 'app.xp.one'|trans }}</p>
-                <hr>
-                <i>{{ 'app.xp.two'|trans }}!</i>
-            </div>
-            <div class="col-sm-4 wow fadeInUp icon-marginb">
-                <i class="fa fa-clock-o blue" aria-hidden="true"></i><br>
-                <p>{{ 'app.work.one'|trans }}</p>
-                <hr>
-                <i>{{ 'app.work.two'|trans }}</i>
-            </div>
-            <div class="col-md-4 wow fadeInRight">
-                <i class="fa fa-headphones blue" aria-hidden="true"></i><br>
-                <p><span class="timer" data-from="0" data-to="60"></span> {{ 'app.music.one'|trans }}</p>
-                <hr>
-                <i>{{ 'app.music.two'|trans }}</i>
-            </div>
+            {% include 'AppSiteBundle::content/parts/skill.html.twig' with {'items': skills} %}
+        </div>
+        <hr>
+        <h3>{{ 'app.title.language'|trans }}</h3>
+        <div class="row">
+            {% include 'AppSiteBundle::content/parts/skill.html.twig' with {'items': languages} %}
+        </div>
+        <hr>
+        <h3>{{ 'app.title.tools'|trans }}</h3>
+        <div class="row">
+            {% include 'AppSiteBundle::content/parts/skill.html.twig' with {'items': tools} %}
         </div>
     </section>
     {% if works|length > 0 %}

@@ -1,36 +1,32 @@
-app.global.title: 'Lucas <span class="blue">SIMONIN</span>'
+app.global.title: 'Lucas <span class="red">SIMONIN</span>'
 app.global.meta_title: Lucas SIMONIN
-app.typed.parttwo: I craft websites.
-app.typed.partthree: From integration to developpement.
-app.title.presentation: Presentation
-app.title.services: Services
-app.title.works: Works
-app.title.blog: Blog
-app.title.cv: CV
-app.title.contact: Contact
-app.subtitle.contact: Let's meet up.
-app.contact_text: If you’d like to talk about a project, my work or anything else then get in touch.
-app.contact.title.email: Email
-app.contact.title.phone: Phone
-app.contact.title.based: Based in
-app.subtitle.works: Works
-app.contact.title.cv: Cv
-app.passion: Passionate
-app.web_addict: Web addict
-app.travel: Traveler
-app.sport: Athletic
-app.xp.one: Years of experience
-app.xp.two: Always more motivated
-app.work.one: Evening or weekend work
-app.work.two: For the moment
-app.music.one: musics
-app.music.two: Listened per day
-app.contact.name: Name
-app.contact.email: Email
-app.contact.subject: Subject
-app.contact.message: Your message
-app.contact.send: Send
+app.global.subtitle: Interactive resume
+app.title.presentation: Profile
+app.title.about: About me
+app.presentation.subtitle: I'm a creative PHP developer
+app.title.details: Details
+app.title.name: Name
+app.title.age: Age
+app.title.location: Location
+app.title.my_age: 27 years
+app.title.xp: Experiences
+app.quote.xp: Experience is the beginning of wisdom.
+app.quote.skill: Competence or incompetence have no age.
+app.quote.skill.author: Michel Bouthot, Chemins parsemés d'immortelles pensées
+app.quote.project: My favorite project ? It's next.
+app.quote.project.author: Frank Lloyd Wright
+app.quote.contact: We become what we are through our contact to the world, to others.
+app.quote.contact.author: Natascha Kampusch, 3096 jours
+app.title.education: Educations
+app.title.career: Careers
+app.title.abilities: Abilities
+app.title.skill: Skills
+app.title.language: Languages
+app.title.tools: Tools
+app.title.project: Projects
+app.quote.xp.author: Alcman de Sardes
 app.contact.option.choose: Choose option
 app.contact.option.website: Website creation
 app.contact.option.propose: Mission to propose
 app.contact.option.other: Other
+app.title.contact: Contact

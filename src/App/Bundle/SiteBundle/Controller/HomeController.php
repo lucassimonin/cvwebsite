@@ -25,18 +25,32 @@ class HomeController extends Controller
     public function indexAction($locationId, $viewType, $layout = false, array $params = array())
     {
         $this->coreHelper = $this->container->get('app.core_helper');
-        $formuleItemContentTypeIdentifier = $this->container->getParameter('app.formule.content_type.identifier');
-        $formulesLocationId = $this->container->getParameter('app.formules.locationid');
         $worksItemContentTypeIdentifier = $this->container->getParameter('app.work.content_type.identifier');
+        $xpContentTypeIdentifier = $this->container->getParameter('app.experience.content_type.identifier');
+        $skillContentTypeIdentifier = $this->container->getParameter('app.skill.content_type.identifier');
         $worksLocationId = $this->container->getParameter('app.works.locationid');
-
-        $contact = new Contact();
-        $form = $this->createForm($this->get('app.form.type.contact'), $contact, array());
-        $params['form'] = $form->createView();
+        $skillsLocationId = $this->container->getParameter('app.skills.locationid');
+        $xpLocationId = $this->container->getParameter('app.xp.locationid');
 
         $params['works'] = $this->coreHelper->getChildrenObject([$worksItemContentTypeIdentifier], $worksLocationId);
-        $params['blogLocationId'] = $this->container->getParameter('app.blog.locationid');
-        $params['formules'] = $this->coreHelper->getChildrenObject([$formuleItemContentTypeIdentifier], $formulesLocationId);
+        $params['languages'] = $this->coreHelper->getObjectByType($this->container->getParameter('app.type.language'),
+            $skillsLocationId,
+            $skillContentTypeIdentifier);
+        $params['tools'] = $this->coreHelper->getObjectByType($this->container->getParameter('app.type.tools'),
+            $skillsLocationId,
+            $skillContentTypeIdentifier);
+        $params['skills'] = $this->coreHelper->getObjectByType($this->container->getParameter('app.type.skill'),
+            $skillsLocationId,
+            $skillContentTypeIdentifier);
+
+        $params['educations'] = $this->coreHelper->getObjectByType($this->container->getParameter('app.type.education'),
+            $xpLocationId,
+            $xpContentTypeIdentifier);
+        $params['xps'] = $this->coreHelper->getObjectByType($this->container->getParameter('app.type.work'),
+            $xpLocationId,
+            $xpContentTypeIdentifier);
+
+
         $response = $this->get('ez_content')->viewLocation(
             $locationId,
             $viewType,
@@ -50,47 +64,5 @@ class HomeController extends Controller
         $response->setSharedMaxAge($this->container->getParameter('app.cache.high.ttl'));
 
         return $response;
-    }
-
-    public function contactFormAction(Request $request)
-    {
-        $repository = $this->container->get( 'ezpublish.api.repository' );
-        $contentService = $repository->getContentService();
-        $locationService = $repository->getLocationService();
-        $contentTypeService = $repository->getContentTypeService();
-        $result = [
-            'error_code' => 0
-        ];
-
-        $contact = new Contact();
-        $form = $this->createForm($this->get('app.form.type.contact'), $contact, array());
-        if ($request->isMethod('POST')) {
-            $form->handleRequest($request);
-            if ($form->isValid()) {
-                // Getting content type identifier for license
-                $contactContentTypeIdentifier = $this->container->getParameter('app.contact.content_type.identifier');
-                $formData = $form->getData();
-
-                $contentType = $contentTypeService->loadContentTypeByIdentifier( 'contact' );
-                $contentCreateStruct = $contentService->newContentCreateStruct( $contentType, 'fre-FR' );
-
-                $contentCreateStruct->setField('name', $formData->name);
-                $contentCreateStruct->setField('message', $formData->message);
-                $contentCreateStruct->setField('email', $formData->email);
-                $formatSelectionValue = array(
-                    $formData->subject
-                );
-                $formatSelectionValueObject = new \eZ\Publish\Core\FieldType\Selection\Value($formatSelectionValue);
-                $contentCreateStruct->setField('subject', $formatSelectionValueObject);
-
-                $locationCreateStruct = $locationService->newLocationCreateStruct( $this->container->getParameter('app.contacts.locationid') );
-
-                $draft = $contentService->createContent( $contentCreateStruct, array( $locationCreateStruct ) );
-                $content = $contentService->publishVersion( $draft->versionInfo );
-            }
-        }
-
-        return new JsonResponse($result);
-
     }
 }

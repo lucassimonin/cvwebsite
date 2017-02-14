@@ -3,27 +3,27 @@ imports:
 
 ezpublish:
     system:
-        freelancewebsite:
+        cvwebsite:
             languages: [fre-FR]
-        freelancewebsite_en:
+        cvwebsite_en:
             # In site_authors_sanofi_fr siteaccess, fre-FR is always preferred, and fallback to eng-US if needed.
             languages: [eng-GB, fre-FR]
     siteaccess:
         match:
             Compound\LogicalAnd:
-                freelancewebsite:
+                cvwebsite:
                     matchers:
                         Map\URI:
                             fr: true
                         Map\Host:
-                            freelance.lucasimonin.me: true
-                    match: freelancewebsite
-                freelancewebsite_en:
+                            lucasimonin.me: true
+                    match: cvwebsite
+                cvwebsite_en:
                     matchers:
                         Map\URI:
                             en: true
                         Map\Host:
-                            freelance.lucasimonin.me: true
-                    match: freelancewebsite_en
+                            lucasimonin.me: true
+                    match: cvwebsite_en
             Map\Host:
-                freelance.lucasimonin.me: freelancewebsite
+                lucasimonin.me: cvwebsite

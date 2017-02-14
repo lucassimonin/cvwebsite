@@ -12,16 +12,16 @@ ezpublish:
 
     # Siteaccess configuration, with one siteaccess per default
     siteaccess:
-        list: [freelancewebsite, freelancewebsite_en]
+        list: [cvwebsite, cvwebsite_en]
         groups:
-            site_group: [freelancewebsite, freelancewebsite_en]
-        default_siteaccess: freelancewebsite
+            site_group: [cvwebsite, cvwebsite_en]
+        default_siteaccess: cvwebsite
 
     # System settings, grouped by siteaccess and/or siteaccess group
     system:
-        freelancewebsite:
+        cvwebsite:
             languages: [fre-FR]
-        freelancewebsite_en:
+        cvwebsite_en:
             languages: [eng-GB, fre-FR]
         site_group:
             content:

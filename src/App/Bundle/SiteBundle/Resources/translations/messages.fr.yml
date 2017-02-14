@@ -1,46 +1,32 @@
-app.global.title: 'Lucas <span class="blue">SIMONIN</span>'
+app.global.title: 'Lucas <span class="red">SIMONIN</span>'
 app.global.meta_title: Lucas SIMONIN - Freelance
-app.typed.parttwo: Je crée des sites.
-app.typed.partthree: De l'intégration au développement.
-app.title.presentation: Présentation
-app.title.services: Services
-app.title.works: Créations
-app.title.blog: Blog
-app.title.cv: CV
-app.title.contact: Contact
-app.subtitle.program: Le programme Mov.iDiet
-app.subtitle.me: Qui suis-je ?
-app.subtitle.works: Mes créations
-app.subtitle.service.title: Mes services
-app.subtitle.service.subtitleone: Ce que je propose
-app.subtitle.service.subtitletwo: Mes formules
-app.subtitle.formule_two:
-app.formule.btn: Me contacter
-app.subtitle.blog: Le blog
-app.blog.btn.article: Lire l'article
-app.blog.btn.all_article: Voir tous les articles
-app.subtitle.contact: Rencontrons nous.
-app.contact_text: Si vous voulez me parler d'un projet, de mon travail ou tout autre chose alors contactez moi.
-app.passion: Passionné
-app.web_addict: Web addict
-app.travel: Voyageur
-app.sport: Sportif
-app.xp.one: ans d'expériences
-app.xp.two: Toujours autant motivé
-app.work.one: Travail le soir ou le week-end
-app.work.two: Pour le moment
-app.music.one: musiques
-app.music.two: écoutées par jour
-app.contact.name: Nom
-app.contact.email: Email
-app.contact.subject: Sujet
-app.contact.message: Votre message
-app.contact.send: Envoyer
-app.contact.option.choose: Choisir une option
-app.contact.option.website: Création de site web
-app.contact.option.propose: Mission à proposer
-app.contact.option.other: Autre
+app.global.subtitle: CV intéractif
+app.title.presentation: Profil
+app.presentation.subtitle: Je suis un développeur PHP créatif
+app.title.about: À propos
+app.title.details: Détails
+app.title.name: Nom
+app.title.age: Àge
+app.title.location: Emplacement
+app.title.xp: Expériences
+app.quote.xp: L'expérience est le commencement de la sagesse.
+app.quote.xp.author: Alcman de Sardes
+app.title.education: Éducations
+app.title.career: Carrières
+app.title.abilities: Capacités
+app.quote.skill: La compétence ou l'incompétence n'ont pas d'âge.
+app.quote.skill.author: Michel Bouthot, Chemins parsemés d'immortelles pensées
+app.quote.project: Mon projet préféré ? C'est le prochain.
+app.quote.project.author: Frank Lloyd Wright
+app.quote.contact: Nous devenons ce que nous sommes à travers notre contact au monde, aux autres.
+app.quote.contact.author: Natascha Kampusch, 3096 jours
+app.title.skill: Compétences
+app.title.language: Langues
+app.title.tools: Outils
+app.title.project: Projets
+app.title.my_age: 27 ans
 app.contact.title.email: Email
 app.contact.title.phone: Téléphone
 app.contact.title.based: Basé à
 app.contact.title.cv: Cv
+app.title.contact: Contact

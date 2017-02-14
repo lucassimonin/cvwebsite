@@ -1,11 +1,14 @@
 parameters:
-    app.blog.locationid: 63
-    app.formules.locationid: 64
-    app.contacts.locationid: 72
     app.works.locationid: 76
     app.blog.article.limit: 5
-    app.article.content_type.identifier: article
-    app.formule.content_type.identifier: formule
-    app.contact.content_type.identifier: contact
+    app.skills.locationid: 82
+    app.xp.locationid: 81
+    app.experience.content_type.identifier: experience
+    app.skill.content_type.identifier: skill
+    app.type.education: 0
+    app.type.work: 1
+    app.type.skill: 0
+    app.type.language: 1
+    app.type.tools: 2
     app.work.content_type.identifier: work
     app.cache.high.ttl: 3600

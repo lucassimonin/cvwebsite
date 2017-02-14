@@ -1,35 +1,65 @@
-<section id="contact" style="background-image:url('{{ ez_field_value(content, 'image_contact').uri }}');">
-    <div class="container">
-        <div class="col-lg-12">
-            <h2 class="green text-center text-uppercase contact"> {{ 'app.subtitle.contact'|trans }} </h2>
+<div class="background-gray">
+    <section id="contact" class="container">
+        <h2>{{ 'app.title.contact'|trans }}</h2>
+        <p class="lead">
+            “{{ 'app.quote.contact'|trans }}”<br>- {{ 'app.quote.contact.author'|trans }}
+        </p>
 
-            <p class="subtitle">{{ 'app.contact_text'|trans }}</p>
-        </div>
-        <div class="col-lg-12">
-            <div class="row">
-                <div class="col-sm-3 col-xs-6 marginbtmobile">
-                    <p>{{ 'app.contact.title.email'|trans }}</p>
-                    <a href="mailto:{{ ez_field_value(content, 'email_contact') }}">{{ ez_field_value(content, 'email_contact') }}</a>
-                </div>
-                <div class="col-sm-3 col-xs-6 marginbtmobile">
-                    <p>{{ 'app.contact.title.phone'|trans }}</p>
+        <hr>
 
-                    <a href="tel:{{ ez_field_value(content, 'phone') }}">{{ ez_field_value(content, 'phone') }}</a>
-                </div>
-                <div class="col-sm-3 col-xs-6">
-                    <p>{{ 'app.contact.title.cv'|trans }}</p>
-                    <a href="{{ ez_field_value(content, 'cv_url') }}" target="_blank">{{ ez_field_value(content, 'cv_url').text }}</a>
-                </div>
-                <div class="col-sm-3 col-xs-6">
-                    <p>{{ 'app.contact.title.based'|trans }}</p>
-                    <a href="{{ ez_field_value(content, 'city_url') }}" target="_blank">{{ ez_field_value(content, 'city_url').text }}</a>
-                </div>
-
-
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="no-bullets">
+                    {% if not ez_is_field_empty(content, 'twitter_url') %}
+                    <li>
+                        <a class="twitter" href="{{ ez_field_value(content, 'twitter_url') }}" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                            {{ ez_field_value(content, 'twitter_url') }}
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if not ez_is_field_empty(content, 'linkedin_url') %}
+                    <li>
+                        <a class="linkedin" href="{{ ez_field_value(content, 'linkedin_url') }}" target="_blank">
+                            <i class="fa fa-linkedin"></i>
+                            {{ ez_field_value(content, 'linkedin_url') }}
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if not ez_is_field_empty(content, 'github_url') %}
+                    <li>
+                        <a class="github" href="{{ ez_field_value(content, 'github_url') }}" target="_blank">
+                            <i class="fa fa-github-alt"></i>
+                            {{ ez_field_value(content, 'github_url') }}
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="no-bullets">
+                    <li>
+                        <a class="other" href="mailto:{{ ez_field_value(content, 'email_contact') }}">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+						    {{ ez_field_value(content, 'email_contact') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a class="other" href="tel:{{ ez_field_value(content, 'phone') }}">
+                            <i class="fa fa-phone-square" aria-hidden="true"></i>
+                            {{ ez_field_value(content, 'phone') }}
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
 
 
+        <hr>
+        <div class="footer">
+            Lucas SIMONIN ©
+            <span id="copyright-year">{{ "now"|date("Y") }}</span>
+        </div>
 
-    </div>
-</section>
+    </section>
+</div>
