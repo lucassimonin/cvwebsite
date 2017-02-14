@@ -9,14 +9,14 @@
         <hr>
 
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 wow fadeInLeft">
                 <h3>{{ 'app.title.about'|trans }}</h3>
                 {{ ez_render_field(content, 'text_bio') }}
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 text-center wow fadeInUp">
                 {{ ez_render_field(content, 'image_bio') }}
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 wow fadeInRight">
                 <h3>{{ 'app.title.details'|trans }}</h3>
                 <p>
                     <strong>{{ 'app.title.name'|trans }}:</strong><br>
@@ -65,7 +65,7 @@
 
     </section>
     </div>
-    <section id="abilities" class="container">
+    <section id="abilities" class="container wow fadeInUp">
         <h2>{{ 'app.title.abilities'|trans }}</h2>
         <p class="lead">
             “{{ 'app.quote.skill'|trans }}”<br>- {{ 'app.quote.skill.author'|trans }}
