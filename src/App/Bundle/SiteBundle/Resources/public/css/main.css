@@ -69,7 +69,7 @@ section .lead {
   }
 }
 
-.navbar  { border: 0px; background-color: #222222; position: absolute; top: 100%; right: 5%; width: 110px; z-index: 999; }
+.navbar  { border: 0px; background-color: #222222; position: absolute; top: 100%; right: 5%; width: 110px; z-index: 999; border-radius: 0; }
 .navbar .navbar-collapse { padding: 0px; max-height: none; }
 .navbar .navbar-nav { float: none; }
 .navbar-nav { margin: 0px; }
@@ -145,7 +145,7 @@ h3 {
   max-width: 246px;
   height: auto;
   border-radius: 50%;
-  border: 8px solid #9a2323;
+  border: 8px solid #eee;
 }
 
 #profile .lead {
@@ -469,13 +469,13 @@ header {
 }
 
 
-.twitter:hover > i, .twitter:hover {
+.twitter:hover > i {
   color:#1DA1F2;
 }
-.linkedin:hover > i, .linkedin:hover {
+.linkedin:hover > i {
   color:#0077b5;
 }
-.github:hover > i, .github:hover {
+.github:hover > i {
   color:#6cc644;
 }
 
