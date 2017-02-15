@@ -82,6 +82,19 @@ section .lead {
 
 .fixed  { position: fixed; top: 60px; }
 
+.contact-ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.contact-ul li {
+  flex-grow: 1;
+  text-align: center;
+}
 
 hr {
   margin: 40px 0px;
@@ -153,7 +166,7 @@ h3 {
 }
 
 #contact {
-  padding-bottom: 200px;
+  padding-bottom: 100px;
 }
 
 #projects .row > div { margin-bottom: 30px; }
@@ -479,10 +492,16 @@ header {
   color:#6cc644;
 }
 
+.instagram:hover > i {
+    color:#c13584;
+}
 
+.phone:hover > i {
+    color:#9a2323;
+}
 
-.other:hover > i {
-  color:#9a2323;
+.mail:hover > i {
+  color:#4468E2;
 }
 
 .btn-contact:hover > i {

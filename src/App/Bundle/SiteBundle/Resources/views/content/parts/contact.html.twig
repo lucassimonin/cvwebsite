@@ -8,13 +8,13 @@
         <hr>
 
         <div class="row">
-            <div class="col-md-6">
-                <ul class="no-bullets">
+            <div class="col-md-12">
+                <ul class="no-bullets contact-ul">
                     {% if not ez_is_field_empty(content, 'twitter_url') %}
                     <li>
                         <a class="twitter" href="{{ ez_field_value(content, 'twitter_url') }}" target="_blank">
                             <i class="fa fa-twitter"></i>
-                            {{ ez_field_value(content, 'twitter_url') }}
+
                         </a>
                     </li>
                     {% endif %}
@@ -22,7 +22,6 @@
                     <li>
                         <a class="linkedin" href="{{ ez_field_value(content, 'linkedin_url') }}" target="_blank">
                             <i class="fa fa-linkedin"></i>
-                            {{ ez_field_value(content, 'linkedin_url') }}
                         </a>
                     </li>
                     {% endif %}
@@ -30,24 +29,24 @@
                     <li>
                         <a class="github" href="{{ ez_field_value(content, 'github_url') }}" target="_blank">
                             <i class="fa fa-github-alt"></i>
-                            {{ ez_field_value(content, 'github_url') }}
                         </a>
                     </li>
                     {% endif %}
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <ul class="no-bullets">
+                    {% if not ez_is_field_empty(content, 'instagram_url') %}
+                        <li>
+                            <a class="instagram" href="{{ ez_field_value(content, 'instagram_url') }}" target="_blank">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    {% endif %}
                     <li>
-                        <a class="other" href="mailto:{{ ez_field_value(content, 'email_contact') }}">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
-						    {{ ez_field_value(content, 'email_contact') }}
+                        <a class="mail" href="mailto:{{ ez_field_value(content, 'email_contact') }}">
+                            <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li>
-                        <a class="other" href="tel:{{ ez_field_value(content, 'phone') }}">
-                            <i class="fa fa-phone-square" aria-hidden="true"></i>
-                            {{ ez_field_value(content, 'phone') }}
+                        <a class="phone" href="tel:{{ ez_field_value(content, 'phone') }}">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
                         </a>
                     </li>
                 </ul>
