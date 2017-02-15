@@ -7,6 +7,7 @@ use eZ\Publish\API\Repository\Values\Content\Query;
 use Symfony\Component\DependencyInjection\Container;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Location;
+use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
 
 /**
@@ -57,14 +58,25 @@ class CoreHelper
      * @param string $category
      * @param int    $locationId
      * @param sting  $contentTypeIdentifier
+     * @param string $sortField
+     * @param string $sortDirection
      * @return array
      */
-    public function getObjectByType($category, $locationId, $contentTypeIdentifier)
+    public function getObjectByType($category, $locationId, $contentTypeIdentifier, $sortField = null, $sortDirection = null)
     {
         $fieldsData = ['attribute' => 'type', 'operator' => Operator::EQ, 'value' => $category];
 
         // Initialize latestNews
         $latestObjects = [];
+        $sortClauses = array(
+
+        );
+        if($sortField != null && $sortDirection != null) {
+            $sortClauses[] = new Field($contentTypeIdentifier, $sortField, $sortDirection);
+        } else {
+            $sortClauses[] =new SortClause\DatePublished(Query::SORT_DESC);
+        }
+
 
         // Try loading all article under loaded location (listing news)
         try {
@@ -74,10 +86,7 @@ class CoreHelper
             // Building Query
             $queryLatestObjects = new Query();
             $queryLatestObjects->filter = $criteriaLatestObjects;
-            $queryLatestObjects->sortClauses = array(
-                //new Location\Priority(Query::SORT_ASC),
-                new SortClause\DatePublished(Query::SORT_DESC)
-            );
+            $queryLatestObjects->sortClauses = $sortClauses;
 
             // Getting results
             $searchResultLatestObjects = $this->repository->sudo(

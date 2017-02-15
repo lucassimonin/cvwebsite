@@ -4,10 +4,7 @@ namespace App\Bundle\SiteBundle\Controller;
 
 use App\Bundle\SiteBundle\Helper\CoreHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use App\Bundle\SiteBundle\Entity\Contact;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use eZ\Publish\API\Repository\Values\Content\Query;
 
 class HomeController extends Controller
 {
@@ -35,13 +32,19 @@ class HomeController extends Controller
         $params['works'] = $this->coreHelper->getChildrenObject([$worksItemContentTypeIdentifier], $worksLocationId);
         $params['languages'] = $this->coreHelper->getObjectByType($this->container->getParameter('app.type.language'),
             $skillsLocationId,
-            $skillContentTypeIdentifier);
+            $skillContentTypeIdentifier,
+            'note',
+            Query::SORT_ASC);
         $params['tools'] = $this->coreHelper->getObjectByType($this->container->getParameter('app.type.tools'),
             $skillsLocationId,
-            $skillContentTypeIdentifier);
+            $skillContentTypeIdentifier,
+            'note',
+            Query::SORT_ASC);
         $params['skills'] = $this->coreHelper->getObjectByType($this->container->getParameter('app.type.skill'),
             $skillsLocationId,
-            $skillContentTypeIdentifier);
+            $skillContentTypeIdentifier,
+            'note',
+            Query::SORT_ASC);
 
         $params['educations'] = $this->coreHelper->getObjectByType($this->container->getParameter('app.type.education'),
             $xpLocationId,
