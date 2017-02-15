@@ -1,7 +1,13 @@
 {% if items|length > 1 %}
+    {% set count = items|length // 2 %}
+    {% if count % 2 == 0 %}
+        {% set count = count + 1 %}
+    {% endif %}
+
     <div class="col-md-6">
         <ul class="no-bullets">
-            {% for item in items[items|length//2:] %}
+
+            {% for item in items[:count] %}
                 <li>
                     <span class="ability-title">{{ ez_field_value(item, 'name') }}</span>
                     {% include 'AppSiteBundle::content/parts/skill_rating.html.twig' with {'rating': ez_field_value(item, 'note').value} %}
@@ -11,7 +17,7 @@
     </div>
     <div class="col-md-6">
         <ul class="no-bullets">
-            {% for item in items[:items|length//2] %}
+            {% for item in items[count:] %}
                 <li>
                     <span class="ability-title">{{ ez_field_value(item, 'name') }}</span>
                     {% include 'AppSiteBundle::content/parts/skill_rating.html.twig' with {'rating': ez_field_value(item, 'note').value} %}

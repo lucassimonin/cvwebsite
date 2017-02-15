@@ -85,6 +85,37 @@
         <div class="row">
             {% include 'AppSiteBundle::content/parts/skill.html.twig' with {'items': tools} %}
         </div>
+        <hr>
+        <h3>{{ 'app.title.others'|trans }}</h3>
+        <div class="row">
+            <ul class="no-bullets contact-ul">
+                <li>
+                    <i class="fa fa-lightbulb-o fa-orange fa-3x"></i><br/>
+                    {{ 'app.skill.creative'|trans }}
+                </li>
+                <li>
+                    <i class="fa fa-users fa-green fa-3x"></i><br/>
+                    {{ 'app.skill.team'|trans }}
+                </li>
+                <li>
+                    <i class="fa fa-heart fa-red fa-3x"></i><br/>
+                    {{ 'app.skill.passion'|trans }}
+                </li>
+                <li>
+                    <i class="fa fa-laptop fa-3x"></i><br/>
+                    {{ 'app.skill.web'|trans }}
+                </li>
+                <li>
+                    <i class="fa fa-globe fa-blue fa-3x"></i><br/>
+                    {{ 'app.skill.travel'|trans }}
+                </li>
+                <li>
+                    <i class="fa fa-trophy fa-orange fa-3x"></i><br/>
+                    {{ 'app.skill.sport'|trans }}
+                </li>
+            </ul>
+
+        </div>
     </section>
     {% if works|length > 0 %}
         {% include 'AppSiteBundle::content/parts/works.html.twig' %}

@@ -21,6 +21,13 @@ app.quote.project.author: Frank Lloyd Wright
 app.quote.contact: Nous devenons ce que nous sommes à travers notre contact au monde, aux autres.
 app.quote.contact.author: Natascha Kampusch, 3096 jours
 app.title.skill: Compétences
+app.title.others: Autres
+app.skill.creative: Créatif
+app.skill.team: Equipier
+app.skill.passion: Passionné
+app.skill.web: Web Addict
+app.skill.travel: Voyageur
+app.skill.sport: Sportif
 app.title.language: Langues
 app.title.tools: Outils
 app.title.project: Projets

@@ -69,6 +69,20 @@ section .lead {
   }
 }
 
+.experience ul {
+    font-weight: 200;
+    padding-left: 20px;
+}
+
+.ezrichtext-field p {
+    margin-bottom: 5px;
+}
+
+.fa-red{color:#dc1616}
+.fa-green{color: #00a78e;}
+.fa-blue{color:#337ab7}
+.fa-orange{color:#fdbd10}
+
 .navbar  { border: 0px; background-color: #222222; position: absolute; top: 100%; right: 5%; width: 110px; z-index: 999; border-radius: 0; }
 .navbar .navbar-collapse { padding: 0px; max-height: none; }
 .navbar .navbar-nav { float: none; }
@@ -840,7 +854,7 @@ ul.no-bullets {
   color: #9a2323;
 }
 
-#abilities ul > li { min-height: 30px; padding: 3px 0px; }
+#abilities ul > li { min-height: 30px; padding: 3px 0px;font-weight: 200; }
 #abilities ul > li:hover { background: #F2F2F2; }
 #abilities ul > li .ability-title { display: inline-block; width: 60%; }
 #abilities ul > li .ability-score { float: right; }

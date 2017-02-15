@@ -34,17 +34,17 @@ class HomeController extends Controller
             $skillsLocationId,
             $skillContentTypeIdentifier,
             'note',
-            Query::SORT_ASC);
+            Query::SORT_DESC);
         $params['tools'] = $this->coreHelper->getObjectByType($this->container->getParameter('app.type.tools'),
             $skillsLocationId,
             $skillContentTypeIdentifier,
             'note',
-            Query::SORT_ASC);
+            Query::SORT_DESC);
         $params['skills'] = $this->coreHelper->getObjectByType($this->container->getParameter('app.type.skill'),
             $skillsLocationId,
             $skillContentTypeIdentifier,
             'note',
-            Query::SORT_ASC);
+            Query::SORT_DESC);
 
         $params['educations'] = $this->coreHelper->getObjectByType($this->container->getParameter('app.type.education'),
             $xpLocationId,

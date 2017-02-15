@@ -30,3 +30,10 @@ app.contact.option.website: Website creation
 app.contact.option.propose: Mission to propose
 app.contact.option.other: Other
 app.title.contact: Contact
+app.title.others: Others
+app.skill.creative: Creative
+app.skill.team: Partner
+app.skill.passion: Passionate
+app.skill.web: Web Addict
+app.skill.travel: Traveler
+app.skill.sport: Athletic
