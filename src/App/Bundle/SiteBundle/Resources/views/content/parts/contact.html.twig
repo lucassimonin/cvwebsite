@@ -7,49 +7,36 @@
 
         <hr>
 
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="no-bullets contact-ul">
-                    {% if not ez_is_field_empty(content, 'twitter_url') %}
-                    <li>
-                        <a class="twitter" href="{{ ez_field_value(content, 'twitter_url') }}" target="_blank">
-                            <i class="fa fa-twitter"></i>
-
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if not ez_is_field_empty(content, 'linkedin_url') %}
-                    <li>
-                        <a class="linkedin" href="{{ ez_field_value(content, 'linkedin_url') }}" target="_blank">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if not ez_is_field_empty(content, 'github_url') %}
-                    <li>
-                        <a class="github" href="{{ ez_field_value(content, 'github_url') }}" target="_blank">
-                            <i class="fa fa-github-alt"></i>
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if not ez_is_field_empty(content, 'instagram_url') %}
-                        <li>
-                            <a class="instagram" href="{{ ez_field_value(content, 'instagram_url') }}" target="_blank">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                    {% endif %}
-                    <li>
-                        <a class="mail" href="mailto:{{ ez_field_value(content, 'email_contact') }}">
-                            <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="phone" href="tel:{{ ez_field_value(content, 'phone') }}">
-                            <i class="fa fa-phone" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                </ul>
+        <div class="row margin-icon">
+            <div class="col-md-2 col-xs-4 margin-bt-mobile">
+                <a class="twitter" href="{{ ez_field_value(content, 'twitter_url') }}" target="_blank">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+            <div class="col-md-2 col-xs-4 margin-bt-mobile">
+                <a class="linkedin" href="{{ ez_field_value(content, 'linkedin_url') }}" target="_blank">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+            </div>
+            <div class="col-md-2 col-xs-4 margin-bt-mobile">
+                <a class="github" href="{{ ez_field_value(content, 'github_url') }}" target="_blank">
+                    <i class="fa fa-github-alt"></i>
+                </a>
+            </div>
+            <div class="col-md-2 col-xs-4">
+                <a class="instagram" href="{{ ez_field_value(content, 'instagram_url') }}" target="_blank">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="col-md-2 col-xs-4">
+                <a class="mail" href="mailto:{{ ez_field_value(content, 'email_contact') }}">
+                    <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="col-md-2 col-xs-4">
+                <a class="phone" href="tel:{{ ez_field_value(content, 'phone') }}">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
 

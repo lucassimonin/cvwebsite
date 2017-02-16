@@ -46,7 +46,8 @@ var paths = {
         ],
         fonts: [
             'web/bundles/appsite/fonts/**',
-            'web/assets/vendor/font-awesome/fonts/**'
+            'web/assets/vendor/font-awesome/fonts/**',
+            'web/assets/vendor/bootstrap/fonts/**'
         ],
         flags: [
             'web/assets/vendor/flag-icon-css/flags/**'
