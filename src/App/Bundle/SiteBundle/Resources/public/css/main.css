@@ -946,6 +946,7 @@ ul.no-bullets {
  .scroll-down {
       width: 100%;
       right: 0px;
+      background-color:transparent;
     }
   .navbar {
     left: 0px;
