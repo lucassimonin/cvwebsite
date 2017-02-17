@@ -1,3 +1,4 @@
+body {-webkit-print-color-adjust: exact;}
 @font-face {
     font-family: 'Lato';
     src: url('../fonts/Lato-Regular.eot');
@@ -618,7 +619,7 @@ img::-moz-selection {
   background: transparent;
 }
 
-.ability-title {
+.ability-title, .ability-score i {
     cursor: default;
 }
 

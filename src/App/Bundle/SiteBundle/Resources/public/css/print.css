@@ -979,3 +979,5 @@ figure.effect h3::after {
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
 }
+
+body {-webkit-print-color-adjust: exact;}

@@ -1,6 +1,6 @@
 {% if items|length > 1 %}
     {% set count = items|length // 2 %}
-    {% if count % 2 == 0 %}
+    {% if items|length % 2 == 1 %}
         {% set count = count + 1 %}
     {% endif %}
 
