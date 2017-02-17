@@ -1,3 +1,10 @@
+@media print and (color) {
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
 body {
     font-family: 'LatoLight', 'Helvetica Neue', sans-serif;
     color: #333;
@@ -933,7 +940,7 @@ header, nav, .footer {
 }
 
 .print-margin-top {
-    margin-top:250px;
+   page-break-before: always;
 }
 
 .col-md-8 {
@@ -961,6 +968,7 @@ figure.effect p {
     transform: translate3d(0,0,0);
     margin-bottom: 5px;
     font-size: 12px;
+    padding-top: 0;
 }
 
 figure.effect img {
@@ -980,4 +988,3 @@ figure.effect h3::after {
     transform: translate3d(0,0,0);
 }
 
-body {-webkit-print-color-adjust: exact;}
