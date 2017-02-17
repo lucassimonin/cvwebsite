@@ -41,6 +41,12 @@ var paths = {
             'web/bundles/appsite/css/main.css',
             'web/assets/vendor/wow/css/libs/animate.css'
         ],
+        css_print: [
+            'web/assets/vendor/bootstrap/dist/css/bootstrap.css',
+            'web/assets/vendor/font-awesome/css/font-awesome.min.css',
+            'web/assets/vendor/flag-icon-css/css/flag-icon.min.css',
+            'web/bundles/appsite/css/print.css'
+        ],
         img: [
             'web/bundles/appsite/images/**'
         ],
@@ -91,6 +97,15 @@ gulp.task('app-css', function() {
         ;
 });
 
+gulp.task('app-css-print', function() {
+    return gulp.src(paths.app.css_print)
+        .pipe(concat('print.css'))
+        .pipe(gulpif(env === 'prod', uglifycss()))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(appRootPath + 'css/'))
+        ;
+});
+
 gulp.task('app-img', function() {
     return gulp.src(paths.app.img)
         .pipe(sourcemaps.write('./'))
@@ -120,7 +135,8 @@ gulp.task('app-watch', function() {
     gulp.watch(paths.app.css, ['app-css']);
     gulp.watch(paths.app.img, ['app-img']);
     gulp.watch(paths.app.fonts, ['app-fonts']);
+    gulp.watch(paths.app.css_print, ['app-css-print']);
 });
 
-gulp.task('default', ['app-js', 'app-js-head', 'app-js-ie', 'app-css', 'app-fonts', 'app-flags']);
+gulp.task('default', ['app-js', 'app-js-head', 'app-js-ie', 'app-css', 'app-fonts', 'app-flags', 'app-css-print']);
 gulp.task('watch', ['default', 'app-watch']);

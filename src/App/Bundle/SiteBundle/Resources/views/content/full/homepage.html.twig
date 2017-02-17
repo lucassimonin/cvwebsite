@@ -21,10 +21,14 @@
                 <p>
                     <strong>{{ 'app.title.name'|trans }}:</strong><br>
                     Lucas Simonin<br>
+                    <strong>{{ 'app.title.poste'|trans }}:</strong><br>
+                    {{ 'app.title.poste.value'|trans }}<br>
                     <strong>{{ 'app.title.age'|trans }}:</strong><br>
                     {{ 'app.title.my_age'|trans }}<br>
+                    <strong>{{ 'app.title.degree'|trans }}:</strong><br>
+                    {{ 'app.title.degree.value'|trans }}<br>
                     <strong>{{ 'app.title.location'|trans }}:</strong><br>
-                    <a href="{{ ez_field_value(content, 'city_url') }}" target="_blank">{{ ez_field_value(content, 'city_url').text }}</a></p>
+                    <a href="{{ ez_field_value(content, 'city_url') }}" class="dotted" target="_blank">{{ ez_field_value(content, 'city_url').text }}</a></p>
 
             </div>
         </div>			</section>
@@ -52,7 +56,7 @@
 
 
 
-        <hr>
+        <hr class="print-margin-top">
 
         <h3>{{ 'app.title.career'|trans }}</h3>
 

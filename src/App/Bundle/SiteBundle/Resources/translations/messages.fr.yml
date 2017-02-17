@@ -1,11 +1,16 @@
 app.global.title: 'Lucas <span class="red">SIMONIN</span>'
-app.global.meta_title: Lucas SIMONIN - Freelance
+app.global.meta_title: Lucas SIMONIN - CV
 app.global.subtitle: CV intéractif
 app.title.presentation: Profil
 app.presentation.subtitle: Je suis un développeur PHP créatif
 app.title.about: À propos
 app.title.details: Détails
 app.title.name: Nom
+app.title.degree: Diplôme
+app.title.degree.value: Ingénieur IT
+app.title.poste: Poste actuel
+app.title.poste.value: CGI & Freelance
+app.title.print: Imprimer
 app.title.age: Àge
 app.title.location: Emplacement
 app.title.xp: Expériences

@@ -1,5 +1,5 @@
 app.global.title: 'Lucas <span class="red">SIMONIN</span>'
-app.global.meta_title: Lucas SIMONIN
+app.global.meta_title: Lucas SIMONIN - Resume
 app.global.subtitle: Interactive resume
 app.title.presentation: Profile
 app.title.about: About me
@@ -7,6 +7,11 @@ app.presentation.subtitle: I'm a creative PHP developer
 app.title.details: Details
 app.title.name: Name
 app.title.age: Age
+app.title.degree: Degree
+app.title.degree.value: IT Engineer
+app.title.poste: Current position
+app.title.print: Print
+app.title.poste.value: CGI & Freelance
 app.title.location: Location
 app.title.my_age: 27 years
 app.title.xp: Experiences
