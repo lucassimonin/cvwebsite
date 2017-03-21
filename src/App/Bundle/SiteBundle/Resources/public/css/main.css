@@ -680,6 +680,17 @@ ul.no-bullets {
   background-color: #fff;
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #ddd;
+}
+
 @media (max-width: 1024px) {
   .icon-size {
     font-size: 12px;
@@ -716,6 +727,9 @@ ul.no-bullets {
       right: 0px;
       background-color:transparent;
     }
+  .hidden-xs {
+    display:none;
+  }
   .navbar {
     left: 0px;
     width: 100%;

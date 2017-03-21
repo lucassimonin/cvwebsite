@@ -17,7 +17,7 @@
                     {{ ez_render_field(work, 'description_site') }}
                     <p><strong>Tags:</strong> <br>{{ ez_render_field(work, 'description') }}</p>
                     <p class="visible-print-block">{{ ez_field_value(work, 'url') }}</p>
-                    <a href="{{ ez_field_value(work, 'url') }}" target="_blank">{{ 'app.show_more'|trans }}</a>
+                    <a rel="external" href="{{ ez_field_value(work, 'url') }}" target="_blank">{{ 'app.show_more'|trans }}</a>
 				<span class="icon">
 					<i class="fa fa-external-link" aria-hidden="true"></i>
 				</span>

@@ -5,7 +5,7 @@
         {% if lang != currentLanguage %}
         	{% do routeRef.set( "siteaccess", ezpublish.translationSiteAccess( lang ) ) %}
             <li class="padding-navbar">
-                <a href="{{ url( routeRef ) }}"><span class="flag-icon flag-icon-{{ lang|lower|split('-')[1] }}"></span></a>
+                <a rel="alternate" hreflang="{{ lang|lower|split('-')[0]|slice(0, 2) }}"  href="{{ url( routeRef ) }}"><span class="flag-icon flag-icon-{{ lang|lower|split('-')[1] }}"></span></a>
             </li>
         {% endif %}
     {% endfor %}
