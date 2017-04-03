@@ -12,3 +12,8 @@
 <meta name="robots" content="INDEX, FOLLOW">
 <meta name="keywords" content="CV, Lucas, SIMONIN, web, PHP, eZ, Symfony">
 <meta name="referrer" content="origin">
+
+<meta property="og:title" content="{{ 'app.global.meta_title'|trans }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lucasimonin.me" />
+<meta property="og:image" content="{{ ez_field_value(content, 'image_bio').uri }}" />
