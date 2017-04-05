@@ -16,4 +16,11 @@
 <meta property="og:title" content="{{ 'app.global.meta_title'|trans }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lucasimonin.me" />
-<meta property="og:image" content="{{ ez_field_value(content, 'image_bio').uri }}" />
+<meta property="og:image" content="{{ app.request.schemeAndHttpHost ~ ez_field_value(content, 'image_bio').uri }}" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@lsimonin2" />
+<meta name="twitter:title" content="Lucas SIMONIN CV" />
+<meta name="twitter:description" content="Bonjour, je suis Lucas SIMONIN développeur Web PHP situé à Montpellier. Voici mon CV." />
+<meta name="twitter:image" content="{{ app.request.schemeAndHttpHost ~ ez_field_value(content, 'image_bio').uri }}" />
+<meta name="twitter:image:alt" content="Profile" />
