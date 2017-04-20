@@ -20,14 +20,12 @@ var paths = {
             'web/assets/vendor/lazysizes/lazysizes.min.js'
         ],
         js: [
-            'web/assets/vendor/jquery/jquery.min.js',
+            'web/assets/vendor/jquery/dist/jquery.min.js',
             'web/assets/vendor/jquery.easing/js/jquery.easing.min.js',
             'web/assets/vendor/bootstrap/dist/js/bootstrap.min.js',
             'web/assets/vendor/scrollreveal/dist/scrollreveal.min.js',
             'web/assets/vendor/classie/classie.js',
             'web/assets/vendor/wow/dist/wow.min.js',
-            'web/assets/vendor/typed.js/dist/typed.min.js',
-            'web/assets/vendor/jquery-countTo/jquery.countTo.js',
             'web/bundles/appsite/js/script.js'
         ],
         js_ie: [

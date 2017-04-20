@@ -5,6 +5,8 @@ namespace App\Bundle\SiteBundle\Controller;
 use App\Bundle\SiteBundle\Helper\CoreHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use eZ\Publish\API\Repository\Values\Content\Query;
+use eZ\Publish\Core\MVC\Symfony\View\View;
+use Symfony\Component\HttpFoundation\Response;
 
 class HomeController extends Controller
 {
@@ -13,14 +15,12 @@ class HomeController extends Controller
 
     /**
      * Homepage action
-     * @param $locationId
-     * @param $viewType
-     * @param bool $layout
-     * @param array $params
-     * @return mixed
+     * @param View $view
+     * @return View
      */
-    public function indexAction($locationId, $viewType, $layout = false, array $params = array())
+    public function indexAction(View $view)
     {
+
         $this->coreHelper = $this->container->get('app.core_helper');
         $worksItemContentTypeIdentifier = $this->container->getParameter('app.work.content_type.identifier');
         $xpContentTypeIdentifier = $this->container->getParameter('app.experience.content_type.identifier');
@@ -53,19 +53,17 @@ class HomeController extends Controller
             $xpLocationId,
             $xpContentTypeIdentifier);
 
-
-        $response = $this->get('ez_content')->viewLocation(
-            $locationId,
-            $viewType,
-            $layout,
-            $params
-        );
-
-        $response->headers->set('X-Location-Id', $locationId);
+        $response = new Response();
+        $response->headers->set('X-Location-Id', $view->getLocation()->id);
         $response->setEtag(md5(json_encode($params)));
         $response->setPublic();
         $response->setSharedMaxAge($this->container->getParameter('app.cache.high.ttl'));
+        $view->setResponse($response);
 
-        return $response;
+        $view->addParameters([
+            'params' => $params,
+        ]);
+
+        return $view;
     }
 }

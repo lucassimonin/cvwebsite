@@ -47,7 +47,7 @@
         <div class="experiences">
 
 
-            {% for education in educations %}
+            {% for education in params.educations %}
                 {% include 'AppSiteBundle::content/parts/experience.html.twig' with {'item': education} %}
             {% endfor %}
 
@@ -62,7 +62,7 @@
 
 
         <div class="experiences">
-            {% for xp in xps %}
+            {% for xp in params.xps %}
                 {% include 'AppSiteBundle::content/parts/experience.html.twig' with {'item': xp} %}
             {% endfor %}
         </div>
@@ -77,17 +77,17 @@
         <hr>
         <h3>{{ 'app.title.skill'|trans }}</h3>
         <div class="row">
-            {% include 'AppSiteBundle::content/parts/skill.html.twig' with {'items': skills} %}
+            {% include 'AppSiteBundle::content/parts/skill.html.twig' with {'items': params.skills} %}
         </div>
         <hr>
         <h3>{{ 'app.title.language'|trans }}</h3>
         <div class="row">
-            {% include 'AppSiteBundle::content/parts/skill.html.twig' with {'items': languages} %}
+            {% include 'AppSiteBundle::content/parts/skill.html.twig' with {'items': params.languages} %}
         </div>
         <hr>
         <h3>{{ 'app.title.tools'|trans }}</h3>
         <div class="row">
-            {% include 'AppSiteBundle::content/parts/skill.html.twig' with {'items': tools} %}
+            {% include 'AppSiteBundle::content/parts/skill.html.twig' with {'items': params.tools} %}
         </div>
         <hr>
         <h3>{{ 'app.title.others'|trans }}</h3>
@@ -118,7 +118,7 @@
             </div>
         </div>
     </section>
-    {% if works|length > 0 %}
+    {% if params.works|length > 0 %}
         {% include 'AppSiteBundle::content/parts/works.html.twig' %}
     {% endif %}
     {% include 'AppSiteBundle::content/parts/contact.html.twig' %}

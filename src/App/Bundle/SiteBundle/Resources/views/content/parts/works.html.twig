@@ -7,7 +7,7 @@
 
     <hr>
     <div class="row">
-        {% for work in works %}
+        {% for work in params.works %}
         <div class="col-md-6 col-sm-12 col-xs-12 wow fadeInUp">
             <figure class="effect">
                 {{ ez_render_field(work, 'image') }}

@@ -2,20 +2,18 @@
   "name": "benjamindespas",
   "private": true,
   "dependencies": {
-    "bootstrap": "~3.3.5",
+    "bootstrap": "3.*",
     "modernizr": "~2.8.1",
     "lazysizes": "^2.0.2",
-    "flag-icon-css": "^2.5.0",
-    "font-awesome": "^4.6.3",
+    "flag-icon-css": "latest",
+    "font-awesome": "latest",
     "wow": "wowjs#^1.1.2",
     "html5shiv": "latest",
     "respond": "latest",
     "jquery.easing": "^1.3.1",
     "scrollreveal": "^3.3.1",
     "classie": "^1.0.1",
-    "jquery-backstretch": "^2.0.4",
-    "typed.js": "^1.1.4",
-    "jquery-countTo": "^1.2.0"
+    "jquery-backstretch": "^2.0.4"
   },
   "overrides": {
     "bootstrap": {
