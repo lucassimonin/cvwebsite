@@ -1,11 +1,5 @@
 {% spaceless %}
-    <title>
-        {% if not ez_is_field_empty(content, 'meta_title') %}
-            {{ ez_field_value(content, 'meta_title') }}
-        {% else %}
-            {{ 'app.global.meta_title'|trans }}
-        {% endif %}
-    </title>
+    <title>{% if not ez_is_field_empty(content, 'meta_title') %}{{ ez_field_value(content, 'meta_title') }}{% else %}{{ 'app.global.meta_title'|trans }}{% endif %}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
