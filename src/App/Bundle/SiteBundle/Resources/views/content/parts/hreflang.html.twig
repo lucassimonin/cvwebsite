@@ -4,7 +4,7 @@
         {% if lang != currentLanguage %}
             <link rel="alternate" hreflang="{{ lang|lower|split('-')[0]|slice(0, 2) }}" href="{{ url( routeRef ) }}" />
         {% else %}
-            <link rel="canonical" href="{{ url( routeRef ) }}" />
+            <link rel="canonical" href="{{ app.request.get('_route') }}" />
         {% endif %}
     {% endfor %}
 {% endspaceless %}
