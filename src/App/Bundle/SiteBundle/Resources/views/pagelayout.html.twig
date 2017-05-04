@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html lang="{{ app.request.locale|slice(0, 2) }}" class="js csstransitions">
-        <head>
-            {% block head %}
-                {% include 'AppSiteBundle::pagelayout/page_head.html.twig' %}
-                {% include 'AppSiteBundle::pagelayout/page_head_style.html.twig' %}
-                {% include 'AppSiteBundle::pagelayout/page_head_for_ie.html.twig' %}
-                {% include 'AppSiteBundle::pagelayout/page_head_script.html.twig' %}
+{% spaceless %}
+    <!DOCTYPE html>
+    <html lang="{{ app.request.locale|slice(0, 2) }}" class="js csstransitions">
+            <head>
+                {% block head %}
+                    {% include 'AppSiteBundle::pagelayout/page_head.html.twig' %}
+                    {% include 'AppSiteBundle::pagelayout/page_head_style.html.twig' %}
+                    {% include 'AppSiteBundle::pagelayout/page_head_for_ie.html.twig' %}
+                    {% include 'AppSiteBundle::pagelayout/page_head_script.html.twig' %}
+                {% endblock %}
+                {% include 'AppSiteBundle::pagelayout/page_meta.html.twig' %}
+            </head>
+        <body id="page-top" data-spy="scroll" data-target="#mainNav">
+            {% block content %}{% endblock %}
+            {% include 'AppSiteBundle::pagelayout/page_footer.html.twig' %}
+            {% block footerScript %}
+                {% include 'AppSiteBundle::pagelayout/page_footer_script.html.twig' %}
             {% endblock %}
-            {% include 'AppSiteBundle::pagelayout/page_meta.html.twig' %}
-        </head>
-    <body id="page-top" data-spy="scroll" data-target="#mainNav">
-        {% block content %}{% endblock %}
-
-        {% include 'AppSiteBundle::pagelayout/page_footer.html.twig' %}
-        {% block footerScript %}
-            {% include 'AppSiteBundle::pagelayout/page_footer_script.html.twig' %}
-        {% endblock %}
-    </body>
-</html>
+        </body>
+    </html>
+{% endspaceless %}

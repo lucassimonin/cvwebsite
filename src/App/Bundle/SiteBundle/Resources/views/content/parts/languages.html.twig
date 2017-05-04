@@ -1,11 +1,10 @@
-{# languages.html.twig #}
+{% spaceless %}
     {% for lang in ezpublish.availableLanguages %}
-        {# This time, we alter the "siteaccess" parameter directly. #}
-        {# We get the right siteaccess with the help of ezpublish.translationSiteAccess() helper #}
         {% if lang != currentLanguage %}
-        	{% do routeRef.set( "siteaccess", ezpublish.translationSiteAccess( lang ) ) %}
+            {% do routeRef.set( "siteaccess", ezpublish.translationSiteAccess( lang ) ) %}
             <li class="padding-navbar">
                 <a rel="alternate" hreflang="{{ lang|lower|split('-')[0]|slice(0, 2) }}"  href="{{ url( routeRef ) }}"><span class="flag-icon flag-icon-{{ lang|lower|split('-')[1] }}"></span></a>
             </li>
         {% endif %}
     {% endfor %}
+{% endspaceless %}

@@ -1,24 +1,23 @@
-<nav class="navbar navbar-default" id="mainNav">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-            <li class="active"><a class="page-scroll" href="#profile">{{ 'app.title.presentation'|trans }}</a></li>
-            <li class=""><a class="page-scroll" href="#experiences">{{ 'app.title.xp'|trans }}</a></li>
-            <li class=""><a class="page-scroll" href="#abilities">{{ 'app.title.abilities'|trans }}</a></li>
-            <li><a class="page-scroll" href="#projects">{{ 'app.title.project'|trans }}</a></li>
-            <li><a class="page-scroll" href="#contact">{{ 'app.title.contact'|trans }}</a></li>
-            <li class="hidden-xs"><a href="#" onclick="window.print();return false;">{{ 'app.title.print'|trans }}</a></li>
-            {{ render( controller( 'AppSiteBundle:Common:languages', {'routeRef': ez_route()} ) ) }}
-        </ul>
-    </div><!-- /.navbar-collapse -->
-</nav>
+{% spaceless %}
+    <nav class="navbar navbar-default" id="mainNav">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a class="page-scroll" href="#profile">{{ 'app.title.presentation'|trans }}</a></li>
+                <li class=""><a class="page-scroll" href="#experiences">{{ 'app.title.xp'|trans }}</a></li>
+                <li class=""><a class="page-scroll" href="#abilities">{{ 'app.title.abilities'|trans }}</a></li>
+                <li><a class="page-scroll" href="#projects">{{ 'app.title.project'|trans }}</a></li>
+                <li><a class="page-scroll" href="#contact">{{ 'app.title.contact'|trans }}</a></li>
+                <li class="hidden-xs"><a href="#" onclick="window.print();return false;">{{ 'app.title.print'|trans }}</a></li>
+                {{ render( controller( 'AppSiteBundle:Common:languages', {'routeRef': ez_route()} ) ) }}
+            </ul>
+        </div>
+    </nav>
+{% endspaceless %}
