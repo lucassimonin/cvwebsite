@@ -1,19 +1,14 @@
 {% spaceless %}
     <!DOCTYPE html>
     <html lang="{{ app.request.locale|slice(0, 2) }}" class="js csstransitions">
-            <head>
-                {% block head %}
-                    {% include 'AppSiteBundle::pagelayout/page_head.html.twig' %}
-                    {% include 'AppSiteBundle::pagelayout/page_head_for_ie.html.twig' %}
-                    {% include 'AppSiteBundle::pagelayout/page_head_script.html.twig' %}
-                {% endblock %}
-                {% include 'AppSiteBundle::pagelayout/page_meta.html.twig' %}
-            </head>
+        <head>
+            {% include 'AppSiteBundle::pagelayout/page_head.html.twig' %}
+            {% include 'AppSiteBundle::pagelayout/page_head_for_ie.html.twig' %}
+            {% include 'AppSiteBundle::pagelayout/page_head_script.html.twig' %}
+        </head>
         <body id="page-top" data-spy="scroll" data-target="#mainNav">
             {% block content %}{% endblock %}
-            {% block footerScript %}
-                {% include 'AppSiteBundle::pagelayout/page_footer_script.html.twig' %}
-            {% endblock %}
+            {% include 'AppSiteBundle::pagelayout/page_footer_script.html.twig' %}
         </body>
     </html>
     {% include 'AppSiteBundle::pagelayout/page_head_style.html.twig' %}

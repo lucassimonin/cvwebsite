@@ -1,4 +1,11 @@
 {% spaceless %}
+    <title>
+        {% if not ez_is_field_empty(content, 'meta_title') %}
+            {{ ez_field_value(content, 'meta_title') }}
+        {% else %}
+            {{ 'app.global.meta_title'|trans }}
+        {% endif %}
+    </title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -15,9 +22,24 @@
     <link rel="icon" type="image/png" href="{{ asset('bundles/appsite/images/favicon-32x32.png') }}" sizes="32x32" />
     <link rel="icon" type="image/png" href="{{ asset('bundles/appsite/images/favicon-16x16.png') }}" sizes="16x16" />
     <link rel="icon" type="image/png" href="{{ asset('bundles/appsite/images/favicon-128.png') }}" sizes="128x128" />
-    <link rel="canonical" href="https://lucasimonin.me" />
+    {% if not ez_is_field_empty(content, 'meta_description') %}
+        <meta name="description" content="{{ ez_field_value(content, 'meta_description') }}">
+    {% endif %}
+    <meta name="robots" content="INDEX, FOLLOW">
+    <meta name="keywords" content="CV, Lucas, SIMONIN, web, PHP, eZ, Symfony, developper, Montpellier, IT, Castelnau, France, Freelance">
+    <meta name="referrer" content="origin">
+    <meta property="og:title" content="{{ 'app.global.meta_title'|trans }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lucasimonin.me" />
+    <meta property="og:image" content="{{ app.request.schemeAndHttpHost ~ ez_field_value(content, 'image_bio').uri }}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@lsimonin2" />
+    <meta name="twitter:title" content="Lucas SIMONIN CV" />
+    <meta name="twitter:description" content="Bonjour, je suis Lucas SIMONIN développeur Web PHP situé à Montpellier. Voici mon CV." />
+    <meta name="twitter:image" content="{{ app.request.schemeAndHttpHost ~ ez_field_value(content, 'image_bio').uri }}" />
+    <meta name="twitter:image:alt" content="Profile" />
+    {{ render( controller( 'AppSiteBundle:Common:hrefLanguages', {'routeRef': ez_route()} ) ) }}
     <link rel="alternate" href="https://lucasimonin.me" hreflang="x-default" />
-    <link rel="alternate" hreflang="en-gb" href="https://lucasimonin.me/en" />
     <meta name="application-name" content="Lucas SIMONIN CV"/>
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="{{ asset('bundles/appsite/images/mstile-144x144.png') }}" />

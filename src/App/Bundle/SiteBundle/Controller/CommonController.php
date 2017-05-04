@@ -23,6 +23,7 @@ class CommonController extends Controller
     /**
      * languagesAction
      *
+     * @param Request $request
      * @param RouteReference $routeRef
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -36,6 +37,27 @@ class CommonController extends Controller
         );
 
         return $this->render( '@AppSite/content/parts/languages.html.twig',
+            array('currentLanguage' => $currentEzLanguage, 'routeRef' => $routeRef)
+        );
+    }
+
+    /**
+     * hrefLanguagesAction
+     *
+     * @param Request $request
+     * @param RouteReference $routeRef
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function hrefLanguagesAction(Request $request, RouteReference $routeRef )
+    {
+        // get cuurent eZ language
+        $currentSFLanguage = $request->get( '_locale');
+        $currentEzLanguage = array_search(
+            $currentSFLanguage ,
+            $this->container->getParameter( 'ezpublish.locale.conversion_map' )
+        );
+
+        return $this->render( '@AppSite/content/parts/hreflang.html.twig',
             array('currentLanguage' => $currentEzLanguage, 'routeRef' => $routeRef)
         );
     }
