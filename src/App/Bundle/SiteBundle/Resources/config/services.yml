@@ -1,12 +1,12 @@
 services:
     app.core_helper:
              class: %app.core_helper.class%
-             arguments: [@ezpublish.api.repository, @service_container]
+             arguments: ["@ezpublish.api.repository", "@service_container"]
     app.criteria_helper:
             class: %app.criteria_helper.class%
-            arguments: [@ezpublish.siteaccess]
+            arguments: ["@ezpublish.siteaccess"]
     app.form.type.contact:
             class: %app.form.type.contact.class%
-            arguments: [@service_container]
+            arguments: ["@service_container"]
             tags:
                 - { name: form.type, alias: contact_type }
