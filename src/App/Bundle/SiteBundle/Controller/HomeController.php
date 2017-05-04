@@ -8,6 +8,11 @@ use eZ\Publish\API\Repository\Values\Content\Query;
 use eZ\Publish\Core\MVC\Symfony\View\View;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * HomeController Class.
+ *
+ * @author simoninl
+ */
 class HomeController extends Controller
 {
     /** @var  CoreHelper */
@@ -15,6 +20,7 @@ class HomeController extends Controller
 
     /**
      * Homepage action
+     *
      * @param View $view
      * @return View
      */

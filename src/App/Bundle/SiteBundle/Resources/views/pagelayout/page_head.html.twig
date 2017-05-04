@@ -32,7 +32,7 @@
     <meta name="twitter:description" content="Bonjour, je suis Lucas SIMONIN développeur Web PHP situé à Montpellier. Voici mon CV." />
     <meta name="twitter:image" content="{{ app.request.schemeAndHttpHost ~ ez_field_value(content, 'image_bio').uri }}" />
     <meta name="twitter:image:alt" content="Profile" />
-    {{ render( controller( 'AppSiteBundle:Common:hrefLanguages', {'routeRef': ez_route()} ) ) }}
+    {{ render( controller( 'AppSiteBundle:Common:hrefLanguages', {'routeRef': ez_route(), 'locationId': content.versionInfo.contentInfo.mainLocationId} ) ) }}
     <link rel="alternate" href="https://lucasimonin.me" hreflang="x-default" />
     <meta name="application-name" content="Lucas SIMONIN CV"/>
     <meta name="msapplication-TileColor" content="#FFFFFF" />
