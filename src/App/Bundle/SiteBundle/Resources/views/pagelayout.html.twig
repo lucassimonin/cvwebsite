@@ -4,7 +4,6 @@
             <head>
                 {% block head %}
                     {% include 'AppSiteBundle::pagelayout/page_head.html.twig' %}
-                    {% include 'AppSiteBundle::pagelayout/page_head_style.html.twig' %}
                     {% include 'AppSiteBundle::pagelayout/page_head_for_ie.html.twig' %}
                     {% include 'AppSiteBundle::pagelayout/page_head_script.html.twig' %}
                 {% endblock %}
@@ -17,4 +16,5 @@
             {% endblock %}
         </body>
     </html>
+    {% include 'AppSiteBundle::pagelayout/page_head_style.html.twig' %}
 {% endspaceless %}
