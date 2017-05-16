@@ -1,0 +1,10 @@
+ezpublish:
+    system:
+        default:
+            content_view:
+                full:
+                    home_page:
+                        controller: "AppSiteBundle:Home:index"
+                        template: "content/full/homepage.html.twig"
+                        match:
+                            Identifier\ContentType: [homepage]

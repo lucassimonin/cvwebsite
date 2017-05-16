@@ -9,7 +9,7 @@
                 {% for item in items[:count] %}
                     <li>
                         <span class="ability-title">{{ ez_field_value(item, 'name') }}</span>
-                        {% include 'AppSiteBundle::content/parts/skill_rating.html.twig' with {'rating': ez_field_value(item, 'note').value} %}
+                        {% include 'content/parts/skill_rating.html.twig' with {'rating': ez_field_value(item, 'note').value} %}
                     </li>
                 {% endfor %}
             </ul>
@@ -19,7 +19,7 @@
                 {% for item in items[count:] %}
                     <li>
                         <span class="ability-title">{{ ez_field_value(item, 'name') }}</span>
-                        {% include 'AppSiteBundle::content/parts/skill_rating.html.twig' with {'rating': ez_field_value(item, 'note').value} %}
+                        {% include 'content/parts/skill_rating.html.twig' with {'rating': ez_field_value(item, 'note').value} %}
                     </li>
                 {% endfor %}
             </ul>
@@ -30,7 +30,7 @@
                 {% for item in items %}
                     <li>
                         <span class="ability-title">{{ ez_field_value(item, 'name') }}</span>
-                        {% include 'AppSiteBundle::content/parts/skill_rating.html.twig' with {'rating': ez_field_value(item, 'note').value} %}
+                        {% include 'content/parts/skill_rating.html.twig' with {'rating': ez_field_value(item, 'note').value} %}
                     </li>
                 {% endfor %}
             </ul>

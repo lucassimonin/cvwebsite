@@ -1,0 +1,51 @@
+{% spaceless %}
+    <section id="abilities" class="container wow fadeInUp">
+        <h2>{{ 'app.title.abilities'|trans }}</h2>
+        <p class="lead">
+            “{{ 'app.quote.skill'|trans }}”<br>- {{ 'app.quote.skill.author'|trans }}
+        </p>
+        <hr>
+        <h3>{{ 'app.title.skill'|trans }}</h3>
+        <div class="row">
+            {% include 'content/parts/skill.html.twig' with {'items': params.skills} %}
+        </div>
+        <hr>
+        <h3>{{ 'app.title.language'|trans }}</h3>
+        <div class="row">
+            {% include 'content/parts/skill.html.twig' with {'items': params.languages} %}
+        </div>
+        <hr>
+        <h3>{{ 'app.title.tools'|trans }}</h3>
+        <div class="row">
+            {% include 'content/parts/skill.html.twig' with {'items': params.tools} %}
+        </div>
+        <hr>
+        <h3>{{ 'app.title.others'|trans }}</h3>
+        <div class="row margin-icon">
+            <div class="col-md-2 col-xs-4 margin-bt-mobile">
+                <i class="fa fa-lightbulb-o fa-orange fa-3x"></i><br/>
+                {{ 'app.skill.creative'|trans }}
+            </div>
+            <div class="col-md-2 col-xs-4 margin-bt-mobile">
+                <i class="fa fa-users fa-green fa-3x"></i><br/>
+                {{ 'app.skill.team'|trans }}
+            </div>
+            <div class="col-md-2 col-xs-4 margin-bt-mobile">
+                <i class="fa fa-heart fa-red fa-3x"></i><br/>
+                {{ 'app.skill.passion'|trans }}
+            </div>
+            <div class="col-md-2 col-xs-4">
+                <i class="fa fa-laptop fa-3x"></i><br/>
+                {{ 'app.skill.web'|trans }}
+            </div>
+            <div class="col-md-2 col-xs-4">
+                <i class="fa fa-globe fa-blue fa-3x"></i><br/>
+                {{ 'app.skill.travel'|trans }}
+            </div>
+            <div class="col-md-2 col-xs-4">
+                <i class="fa fa-trophy fa-orange fa-3x"></i><br/>
+                {{ 'app.skill.sport'|trans }}
+            </div>
+        </div>
+    </section>
+{% endspaceless %}

@@ -1,0 +1,15 @@
+{% spaceless %}
+    <!DOCTYPE html>
+    <html lang="{{ app.request.locale|slice(0, 2) }}" class="js csstransitions">
+        <head>
+            {% include 'pagelayout/page_head.html.twig' %}
+            {% include 'pagelayout/page_head_for_ie.html.twig' %}
+            {% include 'pagelayout/page_head_script.html.twig' %}
+        </head>
+        <body id="page-top" data-spy="scroll" data-target="#mainNav">
+            {% block content %}{% endblock %}
+            {% include 'pagelayout/page_footer_script.html.twig' %}
+        </body>
+    </html>
+    {% include 'pagelayout/page_head_style.html.twig' %}
+{% endspaceless %}

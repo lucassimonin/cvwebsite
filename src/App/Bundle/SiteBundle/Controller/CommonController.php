@@ -31,7 +31,7 @@ class CommonController extends Controller
             $this->container->getParameter( 'ezpublish.locale.conversion_map' )
         );
 
-        return $this->render( '@AppSite/content/parts/languages.html.twig',
+        return $this->render( 'content/parts/languages.html.twig',
             array('currentLanguage' => $currentEzLanguage, 'routeRef' => $routeRef)
         );
     }
@@ -53,7 +53,7 @@ class CommonController extends Controller
             $this->container->getParameter( 'ezpublish.locale.conversion_map' )
         );
 
-        return $this->render( '@AppSite/content/parts/hreflang.html.twig',
+        return $this->render( 'content/parts/hreflang.html.twig',
             array('currentLanguage' => $currentEzLanguage, 'routeRef' => $routeRef, 'locationId' => $locationId)
         );
     }

@@ -1,0 +1,39 @@
+{% extends "pagelayout.html.twig" %}
+{% block content %}
+    {% spaceless %}
+        {% include 'pagelayout/page_header.html.twig' %}
+        {% include 'pagelayout/page_navigation.html.twig' %}
+        <section id="profile" class="container">
+            <h2>{{ 'app.title.presentation'|trans }}</h2>
+            <p class="lead">{{ 'app.presentation.subtitle'|trans }}</p>
+            <hr>
+            <div class="row">
+                <div class="col-md-4 wow fadeInLeft">
+                    <h3>{{ 'app.title.about'|trans }}</h3>
+                    {{ ez_render_field(content, 'text_bio') }}
+                </div>
+                <div class="col-md-4 text-center wow fadeInUp">
+                    {{ ez_render_field(content, 'image_bio') }}
+                </div>
+                <div class="col-md-4 wow fadeInRight">
+                    <h3>{{ 'app.title.details'|trans }}</h3>
+                    <p>
+                        <strong>{{ 'app.title.name'|trans }}:</strong><br>
+                        Lucas Simonin<br>
+                        <strong>{{ 'app.title.poste'|trans }}:</strong><br>
+                        {{ 'app.title.poste.value'|trans }}<br>
+                        <strong>{{ 'app.title.age'|trans }}:</strong><br>
+                        {{ 'app.title.my_age'|trans }}<br>
+                        <strong>{{ 'app.title.degree'|trans }}:</strong><br>
+                        {{ 'app.title.degree.value'|trans }}<br>
+                        <strong>{{ 'app.title.location'|trans }}:</strong><br>
+                        <a href="{{ ez_field_value(content, 'city_url') }}" class="dotted" target="_blank">{{ ez_field_value(content, 'city_url').text }}</a></p>
+                </div>
+            </div>
+        </section>
+        {{ render(controller('AppSiteBundle:Home:experiences')) }}
+        {{ render(controller('AppSiteBundle:Home:skills')) }}
+        {{ render(controller('AppSiteBundle:Home:works')) }}
+        {% include 'content/parts/contact.html.twig' %}
+    {% endspaceless %}
+{% endblock %}
