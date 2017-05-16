@@ -3,6 +3,7 @@
     <html lang="{{ app.request.locale|slice(0, 2) }}" class="js csstransitions">
         <head>
             {% include 'pagelayout/page_head.html.twig' %}
+            {% include 'pagelayout/page_head_style.html.twig' %}
             {% include 'pagelayout/page_head_for_ie.html.twig' %}
             {% include 'pagelayout/page_head_script.html.twig' %}
         </head>
@@ -11,5 +12,4 @@
             {% include 'pagelayout/page_footer_script.html.twig' %}
         </body>
     </html>
-    {% include 'pagelayout/page_head_style.html.twig' %}
 {% endspaceless %}
