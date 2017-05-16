@@ -20,7 +20,6 @@ class HomeController extends Controller
      */
     public function indexAction(View $view)
     {
-
         $this->coreHelper = $this->container->get('app.core_helper');
         $worksItemContentTypeIdentifier = $this->container->getParameter('app.work.content_type.identifier');
         $xpContentTypeIdentifier = $this->container->getParameter('app.experience.content_type.identifier');
@@ -58,6 +57,7 @@ class HomeController extends Controller
         $response->setEtag(md5(json_encode($params)));
         $response->setPublic();
         $response->setSharedMaxAge($this->container->getParameter('app.cache.high.ttl'));
+        //$response->setLastModified();
         $view->setResponse($response);
 
         $view->addParameters([

@@ -4,7 +4,7 @@ namespace App\Bundle\SiteBundle\Helper;
 
 use eZ\Publish\API\Repository\Repository;
 use eZ\Publish\API\Repository\Values\Content\Query;
-use Symfony\Component\DependencyInjection\Container;
+use Monolog\Logger;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Location;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field;
@@ -24,9 +24,6 @@ class CoreHelper
     /** @var \eZ\Publish\API\Repository\Repository */
     protected $repository;
 
-    /** @var \Symfony\Component\DependencyInjection\Container */
-    protected $container;
-
     /** @var \eZ\Publish\API\Repository\ContentTypeService */
     protected $contentEntityManager;
 
@@ -40,17 +37,17 @@ class CoreHelper
     protected $logger;
 
     /**
-     * Constructor
-     * @param Repository $repository
-     * @param Container  $container
+     * CoreHelper constructor.
+     * @param \eZ\Publish\API\Repository\Repository $repository
+     * @param \App\Bundle\SiteBundle\Helper\CriteriaHelper $criteraHelper
+     * @param \Monolog\Logger $logger
      */
-    public function __construct(Repository $repository, $container)
+    public function __construct(Repository $repository, CriteriaHelper $criteraHelper, Logger $logger)
     {
         $this->repository = $repository;
-        $this->container = $container;
-        $this->criteriaHelper = $this->container->get('app.criteria_helper');
+        $this->criteriaHelper = $criteraHelper;
         $this->searchService = $this->repository->getSearchService();
-        $this->logger = $this->container->get('logger');
+        $this->logger = $logger;
     }
 
     /**
@@ -126,15 +123,6 @@ class CoreHelper
     }
 
     /**
-     * Get Container
-     * @return Container
-     */
-    public function getContainer()
-    {
-        return $this->container;
-    }
-
-    /**
      * Get Search services
      * @return \eZ\Publish\API\Repository\SearchService
      */
@@ -145,7 +133,7 @@ class CoreHelper
 
     /**
      * Get criteria helper
-     * @return \Mrt\SiteBundle\Helper\CriteriaHelper
+     * @return CriteriaHelper
      */
     public function getCriteriaHelper()
     {
