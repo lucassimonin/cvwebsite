@@ -1,30 +1,30 @@
-<div class="bg-grey print-margin-top">
-<section id="projects" class="container">
-    <h2>{{ 'app.title.project'|trans }}</h2>
-    <p class="lead">
-        “{{ 'app.quote.project'|trans }}”<br>- {{ 'app.quote.project.author'|trans }}
-    </p>
-
-    <hr>
-    <div class="row">
-        {% for work in params.works %}
-        <div class="col-md-6 col-sm-12 col-xs-12 wow fadeInUp">
-            <figure class="effect">
-                {{ ez_render_field(work, 'image') }}
-
-                <figcaption>
-                    <h3>{{ ez_render_field(work, 'name') }}</h3>
-                    {{ ez_render_field(work, 'description_site') }}
-                    <p><strong>Tags:</strong> <br>{{ ez_render_field(work, 'description') }}</p>
-                    <p class="visible-print-block">{{ ez_field_value(work, 'url') }}</p>
-                    <a rel="external" href="{{ ez_field_value(work, 'url') }}" target="_blank">{{ 'app.show_more'|trans }}</a>
-				<span class="icon">
-					<i class="fa fa-external-link" aria-hidden="true"></i>
-				</span>
-                </figcaption>
-            </figure>
-        </div>
-        {% endfor %}
+{% spaceless %}
+    <div class="bg-grey print-margin-top">
+        <section id="projects" class="container">
+            <h2>{{ 'app.title.project'|trans }}</h2>
+            <p class="lead">
+                “{{ 'app.quote.project'|trans }}”<br>- {{ 'app.quote.project.author'|trans }}
+            </p>
+            <hr>
+            <div class="row">
+                {% for work in params.works %}
+                    <div class="col-md-6 col-sm-12 col-xs-12 wow fadeInUp">
+                        <figure class="effect">
+                            {{ ez_render_field(work, 'image') }}
+                            <figcaption>
+                                <h3>{{ ez_render_field(work, 'name') }}</h3>
+                                {{ ez_render_field(work, 'description_site') }}
+                                <p><strong>Tags:</strong> <br>{{ ez_render_field(work, 'description') }}</p>
+                                <p class="visible-print-block">{{ ez_field_value(work, 'url') }}</p>
+                                <a rel="external" href="{{ ez_field_value(work, 'url') }}" target="_blank">{{ 'app.show_more'|trans }}</a>
+                                <span class="icon">
+                                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                                </span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
     </div>
-</section>
-    </div>
+{% endspaceless %}

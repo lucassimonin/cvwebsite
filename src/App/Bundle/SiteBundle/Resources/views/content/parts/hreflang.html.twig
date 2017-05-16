@@ -1,0 +1,10 @@
+{% spaceless %}
+    {% for lang in ezpublish.availableLanguages %}
+        {% do routeRef.set( "siteaccess", ezpublish.translationSiteAccess( lang ) ) %}
+        {% if lang != currentLanguage %}
+            <link rel="alternate" hreflang="{{ lang|lower|split('-')[0]|slice(0, 2) ~ '-' ~ lang|lower|split('-')[1] }}" href="{{ url( routeRef ) }}" />
+        {% else %}
+            <link rel="canonical" href="{{ absolute_url(path( "ez_urlalias", {"locationId": locationId} )) }}" />
+        {% endif %}
+    {% endfor %}
+{% endspaceless %}
