@@ -26,7 +26,7 @@ var paths = {
             'web/assets/vendor/scrollreveal/dist/scrollreveal.min.js',
             'web/assets/vendor/classie/classie.js',
             'web/assets/vendor/wow/dist/wow.min.js',
-            'web/bundles/appsite/js/script.js'
+            'web/assets/public/js/script.js'
         ],
         js_ie: [
             'web/assets/vendor/html5shiv/dist/html5shiv.js',
@@ -36,20 +36,20 @@ var paths = {
             'web/assets/vendor/bootstrap/dist/css/bootstrap.css',
             'web/assets/vendor/font-awesome/css/font-awesome.min.css',
             'web/assets/vendor/flag-icon-css/css/flag-icon.min.css',
-            'web/bundles/appsite/css/main.css',
+            'web/assets/public/css/main.css',
             'web/assets/vendor/wow/css/libs/animate.css'
         ],
         css_print: [
             'web/assets/vendor/bootstrap/dist/css/bootstrap.css',
             'web/assets/vendor/font-awesome/css/font-awesome.min.css',
             'web/assets/vendor/flag-icon-css/css/flag-icon.min.css',
-            'web/bundles/appsite/css/print.css'
+            'web/assets/public/css/print.css'
         ],
         img: [
-            'web/bundles/appsite/images/**'
+            'web/assets/public/images/**'
         ],
         fonts: [
-            'web/bundles/appsite/fonts/**',
+            'web/assets/public/fonts/**',
             'web/assets/vendor/font-awesome/fonts/**',
             'web/assets/vendor/bootstrap/fonts/**'
         ],
