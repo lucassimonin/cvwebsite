@@ -328,7 +328,11 @@ figure.effect:hover p {
 #experiences .experience p > strong { display: block; padding-top: 8px; margin-bottom: 10px; }
 #experiences .experience .experience-details { display: block; margin-top: 6px; }
 #experiences .experience .experience-details * { color: #9a2323; }
-#experiences .experience .experience-details .seperator { color: #BCBCBC; }
+#experiences .experience .experience-details .seperator { color: #BCBCBC; margin: 0 5px; }
+
+.experiences .experience-period > i, .experiences .location > i, .experiences .link > i {
+    margin-right:5px;
+}
 
 
 .background-gray {
