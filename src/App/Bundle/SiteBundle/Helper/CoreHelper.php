@@ -9,15 +9,11 @@ use eZ\Publish\API\Repository\Values\Content\Query\SortClause;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Location;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
+use eZ\Publish\API\Repository\SearchService;
 
 /**
  * CoreHelper Class
- *
- * This class is used to persist data
- * Class to eZ Publish 5 using only the new eZ Publish API and not legacy.
- *
  * @author simoninl
- * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  */
 class CoreHelper
 {
@@ -59,7 +55,7 @@ class CoreHelper
      * @param string $sortDirection
      * @return array
      */
-    public function getObjectByType($category, $locationId, $contentTypeIdentifier, $sortField = null, $sortDirection = null)
+    public function getObjectByType(string $category, int $locationId, sting $contentTypeIdentifier, sting $sortField = null, sting $sortDirection = null) : array
     {
         $fieldsData = ['attribute' => 'type', 'operator' => Operator::EQ, 'value' => $category];
 
@@ -117,7 +113,7 @@ class CoreHelper
      * Get repository
      * @return \eZ\Publish\API\Repository\Repository
      */
-    public function getRepository()
+    public function getRepository() : Repository
     {
         return $this->repository;
     }
@@ -126,7 +122,7 @@ class CoreHelper
      * Get Search services
      * @return \eZ\Publish\API\Repository\SearchService
      */
-    public function getSearchService()
+    public function getSearchService() : SearchService
     {
         return $this->searchService;
     }
@@ -135,7 +131,7 @@ class CoreHelper
      * Get criteria helper
      * @return CriteriaHelper
      */
-    public function getCriteriaHelper()
+    public function getCriteriaHelper() : CriteriaHelper
     {
         return $this->criteriaHelper;
     }
@@ -144,10 +140,10 @@ class CoreHelper
     /**
      *
      * @param array      $contentType
-     * @param string|int $locationId
+     * @param string $locationId
      * @return array
      */
-    public function getChildrenObject($contentType, $locationId)
+    public function getChildrenObject(array $contentType, $locationId) : array
     {
         $criteria = $this->criteriaHelper->generateContentCriterionByParentLocationIdAndContentIdentifiersAndFieldsData($locationId, $contentType);
         $query = new Query();

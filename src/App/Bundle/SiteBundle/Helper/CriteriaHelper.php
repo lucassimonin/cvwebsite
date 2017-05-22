@@ -35,11 +35,8 @@ class CriteriaHelper
      * @param string[] $tagsList               Array of fields array(array(value =>'', attribute => '', operator => ''), array())
      *
      * @return \eZ\Publish\API\Repository\Values\Content\Query\Criterion
-     *
-     * @SuppressWarnings(PHPMD.CyclomaticComplexity) heavy business rules
-     * @SuppressWarnings(PHPMD.NPathComplexity)
      */
-    public function generateContentCriterionByParentLocationIdAndContentIdentifiersAndFieldsData($parentLocationId, array $contentTypeIdentifiers = [], array $fieldsData = [], array $relationList = [], array $tagsList = [])
+    public function generateContentCriterionByParentLocationIdAndContentIdentifiersAndFieldsData(int $parentLocationId, array $contentTypeIdentifiers = [], array $fieldsData = [], array $relationList = [], array $tagsList = []) : Criterion
     {
 
         $criteria = [];

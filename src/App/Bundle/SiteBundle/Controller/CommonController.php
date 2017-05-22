@@ -22,7 +22,7 @@ class CommonController extends Controller
      * @param RouteReference $routeRef
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function languagesAction(Request $request, RouteReference $routeRef )
+    public function languagesAction(Request $request, RouteReference $routeRef ) : Response
     {
         // get cuurent eZ language
         $currentSFLanguage = $request->get( '_locale');
@@ -44,7 +44,7 @@ class CommonController extends Controller
      * @param integer        $locationId
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function hrefLanguagesAction(Request $request, RouteReference $routeRef, $locationId )
+    public function hrefLanguagesAction(Request $request, RouteReference $routeRef, int $locationId ) : Response
     {
         // get cuurent eZ language
         $currentSFLanguage = $request->get( '_locale');

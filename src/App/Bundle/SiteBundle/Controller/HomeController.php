@@ -20,7 +20,7 @@ class HomeController extends Controller
      * @param View $view
      * @return View
      */
-    public function indexAction(View $view)
+    public function indexAction(View $view) : View
     {
         $response = new Response();
         $response->setPrivate();
@@ -35,7 +35,7 @@ class HomeController extends Controller
      * Part experiences
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function experiencesAction()
+    public function experiencesAction() : Response
     {
         $this->coreHelper = $this->container->get('app.core_helper');
         $xpContentTypeIdentifier = $this->container->getParameter('app.experience.content_type.identifier');
@@ -58,7 +58,7 @@ class HomeController extends Controller
      * Part skills
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function skillsAction()
+    public function skillsAction() : Response
     {
         $this->coreHelper = $this->container->get('app.core_helper');
         $skillContentTypeIdentifier = $this->container->getParameter('app.skill.content_type.identifier');
@@ -90,7 +90,7 @@ class HomeController extends Controller
      * Part works
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function worksAction()
+    public function worksAction() : Response
     {
         $this->coreHelper = $this->container->get('app.core_helper');
         $worksItemContentTypeIdentifier = $this->container->getParameter('app.work.content_type.identifier');
