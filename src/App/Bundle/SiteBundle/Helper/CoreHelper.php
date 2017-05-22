@@ -55,7 +55,7 @@ class CoreHelper
      * @param string $sortDirection
      * @return array
      */
-    public function getObjectByType(string $category, int $locationId, sting $contentTypeIdentifier, sting $sortField = null, sting $sortDirection = null) : array
+    public function getObjectByType($category, $locationId, $contentTypeIdentifier, $sortField = null, $sortDirection = null) : array
     {
         $fieldsData = ['attribute' => 'type', 'operator' => Operator::EQ, 'value' => $category];
 

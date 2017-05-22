@@ -36,7 +36,7 @@ class CriteriaHelper
      *
      * @return \eZ\Publish\API\Repository\Values\Content\Query\Criterion
      */
-    public function generateContentCriterionByParentLocationIdAndContentIdentifiersAndFieldsData(int $parentLocationId, array $contentTypeIdentifiers = [], array $fieldsData = [], array $relationList = [], array $tagsList = []) : Criterion
+    public function generateContentCriterionByParentLocationIdAndContentIdentifiersAndFieldsData($parentLocationId, array $contentTypeIdentifiers = [], array $fieldsData = [], array $relationList = [], array $tagsList = []) : Criterion
     {
 
         $criteria = [];
