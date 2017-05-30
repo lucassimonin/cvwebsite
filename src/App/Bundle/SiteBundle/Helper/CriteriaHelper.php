@@ -13,19 +13,6 @@ use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
 class CriteriaHelper
 {
     /**
-     * @var SiteAccess
-     */
-    private $siteAccess;
-
-    /**
-     * @param SiteAccess $siteAccess
-     */
-    public function __construct(SiteAccess $siteAccess)
-    {
-        $this->siteAccess = $siteAccess;
-    }
-
-    /**
      * Generate criterion list to be used to list sub folder items
      *
      * @param int      $parentLocationId       Location of the folder
@@ -36,7 +23,7 @@ class CriteriaHelper
      *
      * @return \eZ\Publish\API\Repository\Values\Content\Query\Criterion
      */
-    public function generateContentCriterionByParentLocationIdAndContentIdentifiersAndFieldsData($parentLocationId, array $contentTypeIdentifiers = [], array $fieldsData = [], array $relationList = [], array $tagsList = []) : Criterion
+    public function generateContentCriterionByParentLocationIdAndContentIdentifiersAndFieldsData(int $parentLocationId, array $contentTypeIdentifiers = [], array $fieldsData = [], array $relationList = [], array $tagsList = []) : Criterion
     {
 
         $criteria = [];
