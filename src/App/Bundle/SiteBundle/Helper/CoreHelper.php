@@ -20,9 +20,6 @@ class CoreHelper
     /** @var \eZ\Publish\API\Repository\Repository */
     protected $repository;
 
-    /** @var \eZ\Publish\API\Repository\ContentTypeService */
-    protected $contentEntityManager;
-
     /** @var CriteriaHelper */
     protected $criteriaHelper;
 
