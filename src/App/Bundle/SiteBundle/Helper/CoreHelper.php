@@ -18,16 +18,16 @@ use eZ\Publish\API\Repository\SearchService;
 class CoreHelper
 {
     /** @var \eZ\Publish\API\Repository\Repository */
-    protected $repository;
+    privavte $repository;
 
     /** @var CriteriaHelper */
-    protected $criteriaHelper;
+    privavte $criteriaHelper;
 
     /** @var \eZ\Publish\API\Repository\SearchService */
-    protected $searchService;
+    privavte $searchService;
 
     /** @var \Monolog\Logger */
-    protected $logger;
+    privavte $logger;
 
     /**
      * CoreHelper constructor.
@@ -91,35 +91,7 @@ class CoreHelper
             }
         }
 
-
         return $latestObjects;
-    }
-
-    /**
-     * Get repository
-     * @return \eZ\Publish\API\Repository\Repository
-     */
-    public function getRepository() : Repository
-    {
-        return $this->repository;
-    }
-
-    /**
-     * Get Search services
-     * @return \eZ\Publish\API\Repository\SearchService
-     */
-    public function getSearchService() : SearchService
-    {
-        return $this->searchService;
-    }
-
-    /**
-     * Get criteria helper
-     * @return CriteriaHelper
-     */
-    public function getCriteriaHelper() : CriteriaHelper
-    {
-        return $this->criteriaHelper;
     }
 
     /**
