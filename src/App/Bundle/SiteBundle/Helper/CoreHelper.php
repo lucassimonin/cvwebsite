@@ -52,7 +52,7 @@ class CoreHelper
      * @param string $sortDirection
      * @return array
      */
-    public function getObjectByType($category, $locationId, $contentTypeIdentifier, $sortField = null, $sortDirection = null) : array
+    public function getObjectByType(string $category, string $locationId, string $contentTypeIdentifier, $sortField = null, $sortDirection = null) : array
     {
         $fieldsData = ['attribute' => 'type', 'operator' => Operator::EQ, 'value' => $category];
         // Initialize latestNews
