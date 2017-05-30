@@ -18,16 +18,16 @@ use eZ\Publish\API\Repository\SearchService;
 class CoreHelper
 {
     /** @var \eZ\Publish\API\Repository\Repository */
-    privavte $repository;
+    private $repository;
 
     /** @var CriteriaHelper */
-    privavte $criteriaHelper;
+    private $criteriaHelper;
 
     /** @var \eZ\Publish\API\Repository\SearchService */
-    privavte $searchService;
+    private $searchService;
 
     /** @var \Monolog\Logger */
-    privavte $logger;
+    private $logger;
 
     /**
      * CoreHelper constructor.
