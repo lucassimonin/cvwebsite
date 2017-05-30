@@ -58,38 +58,28 @@ class CoreHelper
     public function getObjectByType($category, $locationId, $contentTypeIdentifier, $sortField = null, $sortDirection = null) : array
     {
         $fieldsData = ['attribute' => 'type', 'operator' => Operator::EQ, 'value' => $category];
-
         // Initialize latestNews
         $latestObjects = [];
-        $sortClauses = array(
-
-        );
+        $sortClauses = array();
         if($sortField != null && $sortDirection != null) {
             $sortClauses[] = new Field($contentTypeIdentifier, $sortField, $sortDirection);
         } else {
             $sortClauses[] =new SortClause\DatePublished(Query::SORT_DESC);
         }
-
-
         // Try loading all article under loaded location (listing news)
         try {
             // Generate criteria to get all article under authors listing news class
             $criteriaLatestObjects = $this->criteriaHelper->generateContentCriterionByParentLocationIdAndContentIdentifiersAndFieldsData($locationId, [$contentTypeIdentifier], [$fieldsData]);
-
             // Building Query
             $queryLatestObjects = new Query();
             $queryLatestObjects->filter = $criteriaLatestObjects;
             $queryLatestObjects->sortClauses = $sortClauses;
-
             // Getting results
             $searchResultLatestObjects = $this->repository->sudo(
                 function() use ($queryLatestObjects) {
                     return $this->searchService->findContent($queryLatestObjects);
                 }
             );
-
-
-
         } catch (\Exception $e) {
             $this->logger->critical($e->getMessage());
             $this->logger->critical($e->getCode());
@@ -97,7 +87,6 @@ class CoreHelper
             $this->logger->critical($e->getLine());
             exit("error");
         }
-        //var_dump($searchResultLatestNews);die;
         // Building latest News tab
         if (isset($searchResultLatestObjects->searchHits)) {
             foreach ($searchResultLatestObjects->searchHits as $hit) {
@@ -135,7 +124,6 @@ class CoreHelper
     {
         return $this->criteriaHelper;
     }
-
 
     /**
      *
