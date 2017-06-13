@@ -3,12 +3,8 @@ var gulpif = require('gulp-if');
 var uglify = require('gulp-uglify');
 var uglifycss = require('gulp-uglifycss');
 var concat = require('gulp-concat');
-var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
-var debug = require('gulp-debug');
 var livereload = require('gulp-livereload');
-var order = require('gulp-order');
-var merge = require('merge-stream');
 var env = process.env.GULP_ENV;
 
 var appRootPath = 'web/assets/app/';
