@@ -9,7 +9,7 @@
         <div class="col-md-8">
             <p>
                 <strong>{{ ez_render_field(item, 'name_description') }}</strong>
-            <p>
+            </p>
             {% if not ez_is_field_empty(item, 'description') %}
                 {{ ez_render_field(item, 'description') }}
             {% endif %}
