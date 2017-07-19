@@ -9,18 +9,18 @@
         <div class="col-md-8">
             <p>
                 <strong>{{ ez_render_field(item, 'name_description') }}</strong>
-                <span class="hidden-phone">
-                    {{ ez_render_field(item, 'description') }}
-                    <span class="experience-details">
-                        <span class="location">
-                            <i class="fa fa-map-marker"></i>
-                            {{ ez_render_field(item, 'city') }}
-                        </span>
-                        <span class="seperator">|</span>
-                        <span class="link">
-                            <i class="fa fa-link" aria-hidden="true"></i>
-                            <a rel="nofollow" href="{{ ez_field_value(item, 'website') }}" target="_blank">{{ ez_field_value(item, 'website') }}</a>
-                        </span>
+            <p>
+            {{ ez_render_field(item, 'description') }}
+            <p>
+                <span class="experience-details">
+                    <span class="location">
+                        <i class="fa fa-map-marker"></i>
+                        {{ ez_render_field(item, 'city') }}
+                    </span>
+                    <span class="seperator">|</span>
+                    <span class="link">
+                        <i class="fa fa-link" aria-hidden="true"></i>
+                        <a rel="nofollow" href="{{ ez_field_value(item, 'website') }}" target="_blank">{{ ez_field_value(item, 'website') }}</a>
                     </span>
                 </span>
             </p>
