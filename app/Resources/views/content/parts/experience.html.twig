@@ -10,20 +10,28 @@
             <p>
                 <strong>{{ ez_render_field(item, 'name_description') }}</strong>
             <p>
-            {{ ez_render_field(item, 'description') }}
-            <p>
-                <span class="experience-details">
-                    <span class="location">
-                        <i class="fa fa-map-marker"></i>
-                        {{ ez_render_field(item, 'city') }}
-                    </span>
-                    <span class="seperator">|</span>
-                    <span class="link">
-                        <i class="fa fa-link" aria-hidden="true"></i>
-                        <a rel="nofollow" href="{{ ez_field_value(item, 'website') }}" target="_blank">{{ ez_field_value(item, 'website') }}</a>
-                    </span>
-                </span>
-            </p>
+            {% if not ez_is_field_empty(item, 'description') %}
+                {{ ez_render_field(item, 'description') }}
+            {% endif %}
+            {% if not ez_is_field_empty(item, 'city') or not ez_is_field_empty(item, 'website') %}
+                <p class="experience-details">
+                    {% if not ez_is_field_empty(item, 'city') %}
+                        <span class="location">
+                            <i class="fa fa-map-marker"></i>
+                            {{ ez_render_field(item, 'city') }}
+                        </span>
+                    {% endif %}
+                    {% if not ez_is_field_empty(item, 'city') and not ez_is_field_empty(item, 'website') %}
+                        <span class="seperator">|</span>
+                    {% endif %}
+                    {% if not ez_is_field_empty(item, 'website') %}
+                        <span class="link">
+                            <i class="fa fa-link" aria-hidden="true"></i>
+                            <a rel="nofollow" href="{{ ez_field_value(item, 'website') }}" target="_blank">{{ ez_field_value(item, 'website') }}</a>
+                        </span>
+                    {% endif %}
+                </p>
+            {% endif %}
         </div>
     </div>
 {% endspaceless %}
